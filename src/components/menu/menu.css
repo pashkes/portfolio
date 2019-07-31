@@ -48,26 +48,26 @@
         line-height: 1.16;
     }
 
-    .menu__link.is-active,
     .menu__link:hover {
         transform: translateX(18px);
     }
 
-    .menu__link.is-active::before,
-    .menu__link.is-active::after,
     .menu__link:hover::before,
     .menu__link:hover::after,
     .menu__link:hover,
     .menu__link:focus {
         opacity: 1;
     }
+
     .menu__link:focus::before,
     .menu__link:focus::after {
         display: none;
     }
+
     .menu__link.is-active:focus {
         transform: translateX(0);
     }
+
     .menu__link::before,
     .menu__link::after {
         content: '';
