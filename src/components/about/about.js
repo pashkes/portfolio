@@ -21,7 +21,7 @@ const About = () => (
       </a>
     </div>
     <div className="about__col">
-      <img className="about__photo" src="img/my-photo.png" alt="Pavel Tarasenko"/>
+      <img className="about__photo" src="/img/my-photo.png" alt="Pavel Tarasenko"/>
       <a href="/" className="button-download">
         <svg width={15} height={16}>
           <use xlinkHref={`#${downloadIcon.id}`}/>
