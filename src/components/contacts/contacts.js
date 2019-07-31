@@ -7,7 +7,7 @@ import Field from "../field/field";
 const Contacts = () => (
   <section className="contacts">
     <h2 className="h1 contacts__title">Want to work with me?</h2>
-    <form className="contacts__form" id="contacts" name="contact" data-netlify-recaptcha="true" action="POST" data-netlify="true">
+    <form className="contacts__form" id="contacts" name="contact" data-netlify-recaptcha="true" action="POST" method="POST" data-netlify="true">
       <div className="contacts__body-form">
         <div className="contacts__fields">
           <Field id={`contacts-name`} labelText={`Name`} isRequired={true} />
@@ -16,7 +16,7 @@ const Contacts = () => (
         <Field id={`contacts-message`} labelText={`What I need to know?`} />
       </div>
       <div data-netlify-recaptcha="true" />
-      <button className="contacts__submit button">Get in touch</button>
+      <button className="contacts__submit button" type="submit">Get in touch</button>
     </form>
     <div className="contacts__footer">
       <ul className="contacts__list">
