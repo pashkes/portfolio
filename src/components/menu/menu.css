@@ -46,26 +46,30 @@
         text-align: left;
         font-size: 24px;
         line-height: 1.16;
+        outline: none;
     }
 
-    .menu__link:hover {
+    .menu__link:hover,
+    .menu__link:focus {
         transform: translateX(18px);
     }
 
     .menu__link:hover::before,
     .menu__link:hover::after,
     .menu__link:hover,
-    .menu__link:focus {
+    .menu__link:focus,
+    .menu__link:focus::before,
+    .menu__link:focus::after {
         opacity: 1;
     }
 
-    .menu__link:focus::before,
-    .menu__link:focus::after {
-        display: none;
-    }
-
-    .menu__link.is-active:focus {
+    .menu__link.is-active:focus,
+    .menu__link.is-active:hover {
         transform: translateX(0);
+    }
+    .menu__link.is-active::before,
+    .menu__link.is-active::after {
+        opacity: 0;
     }
 
     .menu__link::before,
