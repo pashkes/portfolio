@@ -34,8 +34,8 @@ class Field extends PureComponent {
   }
 
   render() {
-    const { type = `text`, id, labelText, isRequired = false } = this.props;
-    const { focused, filled, value, name} = this.state;
+    const { type = `text`, id, labelText, isRequired = false, name } = this.props;
+    const { focused, filled, value} = this.state;
     return (
       <div className={`form-control ${focused || filled ? `is-focused` : ``} `}>
         <label className="form-control__label" htmlFor={id}>{labelText}</label>
