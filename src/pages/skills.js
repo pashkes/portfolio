@@ -2,11 +2,13 @@ import React from "react";
 
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo/seo";
+import Skills from "../components/skills/skills";
 
-const NotFoundPage = () => (
+const SkillsPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Skills"/>
+    <Skills/>
   </Layout>
 );
 
-export default NotFoundPage;
+export default SkillsPage;

@@ -1,0 +1,82 @@
+.skills {
+    display: grid;
+    padding-top: 20px;
+    padding-bottom: 18px;
+}
+
+.skills__subtitle {
+    max-width: 512px;
+    margin-bottom: 20px;
+    line-height: 1.42;
+}
+
+.skills__courses {
+    margin: 0 0 26px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.skills__courses > li + li {
+    margin-top: 18px;
+}
+
+.skills__name {
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.42;
+    font-family: 'Roboto Mono', Verdana sans-serif;
+}
+
+.skills__info {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.83;
+}
+
+.skills__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.skills__list > * + * {
+    margin-top: 12px;
+}
+
+.skills__list li {
+    font-size: 20px;
+    font-family: 'Roboto Mono', Verdana, sans-serif;
+    line-height: 1.2;
+    color: var(--secondary-color);
+}
+
+@media (min-width: 1024px) {
+    .skills {
+        grid-template-columns: 3fr 1fr;
+        grid-column-gap: 32px;
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .skills__subtitle {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 1.37;
+    }
+
+    .skills__name {
+        font-size: 18px;
+        line-height: 1.22;
+    }
+
+    .skills__info {
+        font-size: 14px;
+        line-height: 1.57;
+    }
+    .skills__list li {
+        font-size: 24px;
+    }
+    .skills__list > * + * {
+        margin-top: 24px;
+    }
+}

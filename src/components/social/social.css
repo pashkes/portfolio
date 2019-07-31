@@ -1,0 +1,24 @@
+.social {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.social__link {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.social__link svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+    transition: var(--base-transition);
+}
+
+.social__link:hover svg,
+.social__link:focus svg{
+    fill: var(--secondary-color)
+}
