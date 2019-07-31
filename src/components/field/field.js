@@ -35,7 +35,7 @@ class Field extends PureComponent {
 
   render() {
     const { type = `text`, id, labelText, isRequired = false } = this.props;
-    const { focused, filled, value} = this.state;
+    const { focused, filled, value, name} = this.state;
     return (
       <div className={`form-control ${focused || filled ? `is-focused` : ``} `}>
         <label className="form-control__label" htmlFor={id}>{labelText}</label>
@@ -48,6 +48,7 @@ class Field extends PureComponent {
           onBlur={this.handleBlur}
           onChange={this.handleChange}
           value={value}
+          name={name}
           required={isRequired}
         />
       </div>
@@ -60,5 +61,6 @@ Field.propTypes = {
   id: PropTypes.string.isRequired,
   labelText: PropTypes.string.isRequired,
   isRequired: PropTypes.bool,
+  name: PropTypes.string,
 }
 export default Field
