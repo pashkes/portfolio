@@ -41,13 +41,13 @@ input:-webkit-autofill:focus {
 
 @media screen and (min-width: 576px) {
     .container {
-        /*max-width: 540px;*/
+        max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
     .container {
-        /*max-width: 768px;*/
+        max-width: 768px;
         padding-right: 32px;
         padding-left: 32px;
     }
@@ -55,13 +55,13 @@ input:-webkit-autofill:focus {
 
 @media (min-width: 992px) {
     .container {
-        /*max-width: 960px;*/
+        max-width: 960px;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        /*max-width: 1280px;*/
+        max-width: 1280px;
     }
 }
 
