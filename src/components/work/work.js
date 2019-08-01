@@ -1,5 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import withLocation from "./../with-location"
 
@@ -12,7 +13,7 @@ const Work = ({ data, search }) => {
       .find((item) => item.node.frontmatter.query === project)
     || data.allMarkdownRemark.edges
       .find((item) => item.node.frontmatter.query === `1`);
-  const projectsQuery = data.allMarkdownRemark.edges.map((item) => item.node.frontmatter.query);
+  const projects = data.allMarkdownRemark.edges.map((item) => item.node.frontmatter.query)
   const { title, description, skills, demoLink, githubLink, preview } = dataWork.node.frontmatter;
   return (
     <section className="work">
@@ -31,6 +32,7 @@ const Work = ({ data, search }) => {
         <div className="work__screen">
           <div className="work__preview">
             <img src={`/img/${preview}`} alt={`Screen ${title}`}/>
+            {/*<Img />*/}
           </div>
           <div className="work__buttons only-for-mobile">
             <a href={demoLink} className="work__button button">Discover</a>
@@ -38,10 +40,27 @@ const Work = ({ data, search }) => {
           </div>
         </div>
       </div>
-      <Pagination currentWork={dataWork.node.frontmatter.query} works={projectsQuery}/>
+      <Pagination currentWork={dataWork.node.frontmatter.query} works={projects}/>
     </section>
   )
 }
 
+export const query = graphql/*`
+  query PostQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        preview {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+*/
 export default withLocation(Work)
 
