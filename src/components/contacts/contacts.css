@@ -83,7 +83,6 @@
 
     .contacts__fields {
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 32px;
     }
 
     .contacts__fields > * + * {

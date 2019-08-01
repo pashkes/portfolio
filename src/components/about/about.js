@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "./about.css"
 import downloadIcon from "./../../images/download.svg"
+import ModalExp from "../modal-exp/modal-exp"
 
 const About = () => {
   const data = useStaticQuery(schemaForMyPhoto)
-  console.log(data.file.childImageSharp.fluid)
   return (
     <section className="about">
       <div className="about__body">
@@ -15,7 +15,7 @@ const About = () => {
         <p className="about__subtitle">I&rsquo;m really like creating user interfaces which intuitive, convenient and
           beautiful. Of&nbsp;course,
           I&rsquo;m paying attention to&nbsp;performance and accessibility that&nbsp;I consider highly important
-          experience
+          <ModalExp />
           nowadays.</p>
         <a href="/" className="button-download">
           <svg width={15} height={16}>

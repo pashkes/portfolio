@@ -10,7 +10,7 @@ const Contacts = () => (
     <form className="contacts__form" id="contacts" name="contact" method="POST" data-netlify="true">
       <div className="contacts__body-form">
         <div className="contacts__fields">
-          <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} />
+          <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} autofocus={true} />
           <Field type={`e-mail`} id={`contacts-email`} name={`email`} labelText={`E-mail`} isRequired={true} />
         </div>
         <Field id={`contacts-message`} name={`message`} labelText={`What I need to know?`} />

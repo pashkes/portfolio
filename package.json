@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "bootstrap": "^4.3.1",
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -27,8 +28,12 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.8.2",
     "react": "^16.8.6",
+    "react-aria-modal": "^4.0.0",
+    "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-modal": "^3.9.1",
+    "reactjs-popup": "^1.4.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

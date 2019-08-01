@@ -1,9 +1,6 @@
-
-// withLocation.js
-
 import React from "react"
 import { Location } from "@reach/router"
-import * as queryString from "query-string"
+import * as queryString from "query-string/index"
 
 const withLocation = ComponentToWrap => props => (
   <Location>
