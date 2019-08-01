@@ -14,7 +14,6 @@ const WorkPage = () => (
 )
 const pageQuery = graphql`{
   allMarkdownRemark {
-    totalCount
     edges {
       node {
         frontmatter {

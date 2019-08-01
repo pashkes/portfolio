@@ -5,6 +5,7 @@
 
 .about__photo {
     margin-bottom: 24px;
+    max-width: 326px;
 }
 
 .about__body .button-download {
