@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import withLocation from "./../with-location"
 
@@ -15,19 +14,6 @@ const Work = ({ data, search }) => {
       .find((item) => item.node.frontmatter.query === `1`);
   const projectsQuery = data.allMarkdownRemark.edges.map((item) => item.node.frontmatter.query);
   const { title, description, skills, demoLink, githubLink, preview } = dataWork.node.frontmatter;
-
-  const imagePreview = useStaticQuery(graphql`
-    query {
-      file(relativePath: { regex: "/cities/" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-  console.log(data)
   return (
     <section className="work">
       <div className="work__inner">
