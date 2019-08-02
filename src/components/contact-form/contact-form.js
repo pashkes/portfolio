@@ -9,8 +9,8 @@ const ContactForm = () => (
     <p hidden><label>Don’t fill this out: <input name="bot-field"/></label></p>
     <div className="contact-form__body">
       <div className="contact-form__fields">
-        <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} autofocus={true}/>
-        <Field type={`e-mail`} id={`contacts-email`} name={`email`} labelText={`E-mail`} isRequired={true}/>
+        <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} autofocus={true} />
+        <Field type={`e-mail`} id={`contacts-email`} name={`email`} labelText={`E-mail`} isRequired={true} pattern={`[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`} />
       </div>
       <Field id={`contacts-message`} name={`message`} labelText={`What I need to know?`}/>
     </div>

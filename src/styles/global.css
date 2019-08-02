@@ -202,8 +202,13 @@ p {
     }
 }
 .success-sent-text {
-    margin-bottom: 80px;
+    padding-top: 110px;
     font-size: 16px;
     font-family: 'Roboto Mono', Verdana, sans-serif;
     text-align: center;
+}
+@media screen and (min-width: 1024px) {
+    .success-sent-text {
+      padding-top: 40px;
+    }
 }

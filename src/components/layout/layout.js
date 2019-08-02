@@ -14,23 +14,26 @@ import Header from "../header/header";
 import Menu from "../menu/menu";
 import Social from "../social/social";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, footer, classModFooter }) => {
   return (
     <>
       <Header />
       <main>
         <div className="container">
-          <div className="body-screen">
-            <div className="body-screen__row">
-              <div className="body-screen__col body-screen__col--nav">
+          <div className="layout">
+            <div className="layout__row">
+              <div className="layout__col layout__col--nav">
                 <Menu />
               </div>
-              <div className="body-screen__col">
+              <div className="layout__col">
                 {children}
               </div>
             </div>
-            <div className="body-screen__social">
-              <Social/>
+            <div className={`layout__footer ${classModFooter}`}>
+              <div className="layout__social">
+                <Social/>
+              </div>
+              {footer}
             </div>
           </div>
         </div>

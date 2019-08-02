@@ -12,23 +12,23 @@ const Skills = () => (
       <ul className="skills__courses">
         <li>
           <p className="skills__name">Javascript, Level&nbsp;3 (React.js)</p>
-          <p className="skills__info">HTML Academy&nbsp;/ <a href="/" className="skills__cert-link">certificate</a></p>
+          <p className="skills__info">HTML Academy&nbsp;/ <a href="https://assets.htmlacademy.ru/certificates/intensive/133/164879.pdf" className="skills__cert-link" target={`blank`} rel="noopener noreferrer" >certificate</a></p>
         </li>
         <li>
           <p className="skills__name">Javascript, Level&nbsp;2</p>
-          <p className="skills__info">HTML Academy&nbsp;/ <a href="/" className="skills__cert-link">certificate</a></p>
+          <p className="skills__info">HTML Academy&nbsp;/ <a href="https://assets.htmlacademy.ru/certificates/intensive/131/164879.pdf" className="skills__cert-link" target={`blank`} rel="noopener noreferrer" >certificate</a></p>
         </li>
         <li>
           <p className="skills__name">Javascript, Level&nbsp;1</p>
-          <p className="skills__info">HTML Academy&nbsp;/ <a href="/" className="skills__cert-link">certificate</a></p>
+          <p className="skills__info">HTML Academy&nbsp;/ <a href="https://assets.htmlacademy.ru/certificates/intensive/55/164879.pdf" className="skills__cert-link" target={`blank`} rel="noopener noreferrer" >certificate</a></p>
         </li>
         <li>
           <p className="skills__name">HTML and CSS, Level&nbsp;2</p>
-          <p className="skills__info">HTML Academy / <a href="/" className="skills__cert-link">certificate</a></p>
+          <p className="skills__info">HTML Academy / <a href="https://assets.htmlacademy.ru/certificates/intensive/24/164879.pdf" className="skills__cert-link" target={`blank`} rel="noopener noreferrer" >certificate</a></p>
         </li>
         <li>
           <p className="skills__name">HTML and CSS, Level&nbsp;1</p>
-          <p className="skills__info">HTML Academy / <a href="/" className="skills__cert-link">certificate</a></p>
+          <p className="skills__info">HTML Academy / <a href="https://assets.htmlacademy.ru/certificates/intensive/18/164879.pdf" className="skills__cert-link" target={`blank`} rel="noopener noreferrer" >certificate</a></p>
         </li>
       </ul>
     </div>
