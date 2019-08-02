@@ -3,13 +3,12 @@ import React from "react";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo/seo";
 import Contacts from "../components/contacts/contacts";
-import ContactForm from "../components/contact-form/contact-form"
 
-const ContactsPage = () => (
+const SuccessPage = () => (
   <Layout>
     <SEO description={`Portfolio`} title="Contact"/>
-    <Contacts child={<ContactForm />}/>
+    <Contacts child={<p className={`success-sent-text`}>Your message has been successfully send. I&rsquo;ll write you soon.</p>}/>
   </Layout>
 );
 
-export default ContactsPage;
+export default SuccessPage;

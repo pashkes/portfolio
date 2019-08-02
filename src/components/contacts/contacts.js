@@ -2,23 +2,11 @@ import React from "react";
 
 import "./contacts.css";
 import Social from "../social/social";
-import Field from "../field/field";
 
-const Contacts = () => (
+const Contacts = ({child}) => (
   <section className="contacts">
     <h2 className="h1 contacts__title">Want to work with me?</h2>
-    <form className="contacts__form" id="contacts"  name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
-      <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
-      <div className="contacts__body-form">
-        <div className="contacts__fields">
-          <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} autofocus={true} />
-          <Field type={`e-mail`} id={`contacts-email`} name={`email`} labelText={`E-mail`} isRequired={true} />
-        </div>
-        <Field id={`contacts-message`} name={`message`} labelText={`What I need to know?`} />
-      </div>
-      <button className="contacts__submit button" type="submit">Get in touch</button>
-    </form>
+    {child}
     <div className="contacts__footer">
       <ul className="contacts__list">
         <li>
