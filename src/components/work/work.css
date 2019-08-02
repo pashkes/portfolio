@@ -59,7 +59,7 @@
     }
 
     .work__inner {
-        grid-template-columns: 0.7fr 1fr;
+        grid-template-columns: 0.73fr 1fr;
         margin-bottom: 80px;
     }
 
@@ -102,5 +102,13 @@
         margin-bottom: 0;
         padding-top: 14px;
     }
+    .work__preview img {
+        max-height: 315px;
+    }
 }
 
+@media (min-width: 1420px) {
+    .work__preview {
+        margin-right: -100px;
+    }
+}

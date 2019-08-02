@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./about.css"
 import downloadIcon from "./../../images/download.svg"
 import ModalExp from "../modal-exp/modal-exp"
-
 const About = () => {
   const data = useStaticQuery(schemaForMyPhoto)
   return (

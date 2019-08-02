@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "gatsby";
-import "./promo.css";
+import React from "react"
+import { Link } from "gatsby"
+import "./promo.css"
 
 const Promo = () => (
   <section className="promo">

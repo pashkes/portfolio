@@ -5,5 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-import "normalize.css"
-import "./src/styles/global.css"
+
+import "normalize.css";
+import "./src/styles/global.css";

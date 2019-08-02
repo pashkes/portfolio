@@ -31,13 +31,16 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .wrapper {
+        background: repeating-linear-gradient(to right, #191F2F, #191F2F 1px, #101626 1px, #101626 24.9%);
+    }
     .layout {
         min-height: calc(100vh - var(--header-min-height));
         padding-bottom: 32px;
     }
 
     .layout__row {
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 3.35fr;
     }
 
     .layout__col--nav {

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import "./menu.css";
-
 const Menu = ({classMod}) => {
   return (
     <nav className={`menu ${classMod}`}>
