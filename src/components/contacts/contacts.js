@@ -7,7 +7,9 @@ import Field from "../field/field";
 const Contacts = () => (
   <section className="contacts">
     <h2 className="h1 contacts__title">Want to work with me?</h2>
-    <form className="contacts__form" id="contacts" name="contact" method="POST" data-netlify="true">
+    <form className="contacts__form" id="contacts"  name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
       <div className="contacts__body-form">
         <div className="contacts__fields">
           <Field id={`contacts-name`} labelText={`Name`} name={`name`} isRequired={true} autofocus={true} />
