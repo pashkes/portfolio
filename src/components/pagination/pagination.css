@@ -39,7 +39,9 @@
     cursor: default;
     pointer-events: none;
 }
-
+.pagination__item.is-active a:focus {
+    color: var(--primary-color);
+}
 .pagination__item.is-active a::before {
     background-color: var(--secondary-color);
 }

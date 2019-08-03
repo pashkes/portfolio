@@ -13,8 +13,9 @@ class Work extends PureComponent {
     this.subtitle = null
     this.buttons = null
     this.myTween = new TimelineLite({ paused: true })
-    this.skills = null
-    this.previewPhoto = null
+    this.skills = null;
+    this.previewPhoto = null;
+    this.buttonsMobile = null
   }
 
   componentDidMount() {
@@ -23,7 +24,8 @@ class Work extends PureComponent {
       .from(this.subtitle, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
       .from(this.skills, 0.25, { y: -30, autoAlpha: 0 }, "-=0.1")
       .from(this.buttons, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this.previewPhoto, 0.3, { opacity: 0 })
+      .from(this.buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
+      .from(this.previewPhoto, 0.3, { opacity: 0 },"-=0.25")
       .play()
   }
 
@@ -60,7 +62,7 @@ class Work extends PureComponent {
             <div className="work__preview" ref={img => this.previewPhoto = img}>
               <img src={`/img/${preview}`} alt={`Screen ${title}`}/>
             </div>
-            <div className="work__buttons only-for-mobile">
+            <div className="work__buttons only-for-mobile" ref={buttonsMobile => this.buttonsMobile = buttonsMobile}>
               <a href={demoLink} className="work__button button">Discover</a>
               <a href={githubLink} className="work__button button">view code</a>
             </div>
