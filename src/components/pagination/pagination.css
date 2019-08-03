@@ -27,12 +27,19 @@
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: -1;
 }
+.pagination__item.is-active a {
+    cursor: default;
+    pointer-events: none;
+}
 
 .pagination__item.is-active a::before {
     background-color: var(--secondary-color);
 }
 
 @media (min-width: 1024px) {
+    .pagination {
+        margin-top: auto;
+    }
     .pagination__item a {
         display: flex;
         justify-content: center;

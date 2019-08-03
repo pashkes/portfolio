@@ -5,7 +5,10 @@
     padding-bottom: 24px;
     min-height: calc(100vh - 98px);
 }
-
+.layout__col {
+    display: flex;
+    flex-direction: column;
+}
 .layout__row {
     display: grid;
     flex-grow: 1;

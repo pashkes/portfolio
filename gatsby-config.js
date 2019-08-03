@@ -50,14 +50,14 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    `gatsby-plugin-layout`
+    `gatsby-plugin-layout`,
     // 'gatsby-plugin-page-transitions',
-    // {
-    //   resolve: "gatsby-plugin-transition-link",
-    //   options: {
-    //     layout: require.resolve(`./src/layouts/index.js`)
-    //   }
-    // }
+    /*{
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/layouts/index.js`)
+      }
+    }*/
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
   ],

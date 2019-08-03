@@ -12,7 +12,7 @@ const Pagination = ({ works, currentWork }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;
