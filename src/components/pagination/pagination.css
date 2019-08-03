@@ -26,7 +26,9 @@
     background-color: #DADADA;
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: -1;
+    transition: var(--base-transition);
 }
+
 .pagination__item.is-active a {
     cursor: default;
     pointer-events: none;
@@ -39,7 +41,9 @@
 @media (min-width: 1024px) {
     .pagination {
         margin-top: auto;
+        margin-bottom: -42px;
     }
+
     .pagination__item a {
         display: flex;
         justify-content: center;
@@ -52,14 +56,17 @@
         font-family: 'Roboto Mono', Verdana, sans-serif;
         font-weight: 500;
     }
+
     .pagination__item a::before {
         width: 32px;
         height: 32px;
         opacity: 0;
     }
+
     .pagination__item.is-active a::before {
         opacity: 1;
     }
+
     .pagination__item.is-active a {
         color: var(--primary-color);
     }
