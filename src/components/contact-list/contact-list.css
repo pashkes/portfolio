@@ -7,6 +7,7 @@
     margin: 0 0 8px;
     padding: 0;
     list-style-type: none;
+    z-index: 1;
 }
 
 .contacts-list li {
