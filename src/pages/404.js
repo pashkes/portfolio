@@ -7,7 +7,7 @@ const NotFoundPage = () => (
   <>
     <SEO title="404: Not found"/>
     <section>
-      <h2>Page not found</h2>
+      <h2 className={`h1`}>Page not found</h2>
       <Link className={`button`} to={`/`}>back to home</Link>
     </section>
   </>

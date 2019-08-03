@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react"
-import { TimelineLite, CSSPlugin, TweenLite } from "gsap/all"
+import React, { PureComponent } from "react";
+import { TimelineLite} from "gsap";
 
-import withLocation from "./with-location"
-import Pagination from "../pagination/pagination"
-import "./work.css"
+import withLocation from "./with-location";
+import Pagination from "../pagination/pagination";
+import "./work.css";
 
 class Work extends PureComponent {
   constructor(props) {
@@ -72,5 +72,5 @@ class Work extends PureComponent {
   }
 }
 
-export default withLocation(Work)
+export default withLocation(Work);
 

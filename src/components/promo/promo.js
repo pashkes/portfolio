@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react"
 import { Link } from "gatsby"
-import { TimelineLite, CSSPlugin, TweenLite } from "gsap/all"
+import { TimelineLite} from "gsap";
 
 import "./promo.css"
 

@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { TimelineLite, CSSPlugin, TweenLite } from "gsap/all"
+import { TimelineLite} from "gsap";
 
 import "./about.css"
 import downloadIcon from "./../../images/download.svg"
