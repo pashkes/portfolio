@@ -68,7 +68,7 @@ class Skills extends PureComponent {
             {
               courses.map(({ name, cert }, index) => (
                 <li key={name} ref={course => this.courses[index] = course}>
-                  <p className="skills__name">{name}</p>
+                  <p className="skills__name" dangerouslySetInnerHTML={{__html: name}} />
                   <p className="skills__info">HTML Academy&nbsp;/ <a href={cert} className="skills__cert-link" target={`blank`} rel="noopener noreferrer">certificate</a></p>
                 </li>
               ))

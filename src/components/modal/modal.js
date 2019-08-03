@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { TimelineLite } from "gsap";
-import AcrossIcon from "../../images/across.svg";
+
+import AcrossIcon from "../../images/icons/across.svg";
 
 class Modal extends PureComponent {
   constructor(props) {
@@ -21,9 +22,7 @@ class Modal extends PureComponent {
     return (
       <div ref={modal => this.dialog = modal} className={`modal-exp__wrapper`} role="document">
         <button className="modal-exp__close" id="close-modal" onClick={deactivateModal}>
-          <svg width={18} height={18}>
-            <use xlinkHref={`#${AcrossIcon.id}`}/>
-          </svg>
+          <AcrossIcon />
         </button>
         <div className="modal-exp__body">
           <h2 className="modal-exp__title" id="exp-title">Experience</h2>

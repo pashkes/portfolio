@@ -11,6 +11,11 @@
     display: none;
 }
 
+.about__body {
+    position: relative;
+    z-index: 1;
+}
+
 @media screen and (min-width: 1024px) {
     .about {
         grid-template-columns: 2fr 1.25fr;

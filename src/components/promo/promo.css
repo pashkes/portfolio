@@ -1,7 +1,9 @@
 .promo {
+    position: relative;
     padding-top: 56px;
     padding-bottom: 56px;
     text-align: center;
+    z-index: 5;
 }
 .promo__title {
     margin-bottom: 36px;

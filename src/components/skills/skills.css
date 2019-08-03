@@ -1,6 +1,8 @@
 .skills {
+    position: relative;
     display: grid;
     padding-top: 20px;
+    z-index: 1;
 }
 
 .skills__subtitle {

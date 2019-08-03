@@ -42,7 +42,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
-    'gatsby-plugin-svg-sprite',
+    // 'gatsby-plugin-svg-sprite',
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /icons/ // See below to configure properly
+        }
+      }
+    },
     `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,

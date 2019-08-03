@@ -68,3 +68,28 @@
         justify-content: flex-start;
     }
 }
+.cube {
+    position: fixed;
+    z-index: 1;
+}
+.cube svg {
+    width: inherit;
+    height: inherit;
+}
+.cube--xl {
+    width: 173px;
+    height: 161px;
+}
+.cube--md {
+    width: 37px;
+    height: 35px;
+}
+
+.cube--lg {
+    width: 44px;
+    height: 41px;
+}
+.cube--sm {
+    width: 21px;
+    height: 24px;
+}

@@ -46,7 +46,7 @@ class Work extends PureComponent {
         <div className="work__inner">
           <div className="work__info">
             <h2 className="work__title h1" ref={h2 => this.title = h2}>{title}</h2>
-            <p className="work__subtitle" ref={p => this.subtitle = p}>{description}</p>
+            <p className="work__subtitle" ref={p => this.subtitle = p} dangerouslySetInnerHTML={{__html: description}} />
             <ul className="work__techs" ref={ul => this.skills = ul}>
               {skills.split(` `).map((skill) => <li
                 key={skill}>{skill} </li>)}

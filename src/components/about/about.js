@@ -1,21 +1,20 @@
-import React, { PureComponent } from "react"
-import { TimelineLite} from "gsap";
+import React, { PureComponent } from "react";
+import { TimelineLite } from "gsap";
 
-import "./about.css"
-import downloadIcon from "./../../images/download.svg"
-import ModalExp from "../modal-exp/modal-exp"
-import MyPhoto from "../my-photo/my-photo"
-
+import "./about.css";
+import DownloadIcon from "./../../images/icons/download.svg";
+import ModalExp from "../modal-exp/modal-exp";
+import MyPhoto from "../my-photo/my-photo";
 
 class About extends PureComponent {
   constructor(props) {
-    super(props)
+    super(props);
     this.title = null;
     this.subtitle = null;
     this.btnDownload = null;
     this.myPhoto = null;
 
-    this.myTween = new TimelineLite({ paused: true })
+    this.myTween = new TimelineLite({ paused: true });
   }
 
   componentDidMount() {
@@ -24,7 +23,7 @@ class About extends PureComponent {
       .from(this.subtitle, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
       .from(this.btnDownload, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
       .from(this.myPhoto, 0.35, { autoAlpha: 0, opacity: 0 }, "-=0.1")
-      .play()
+      .play();
   }
 
   render() {
@@ -40,9 +39,7 @@ class About extends PureComponent {
             nowadays.</p>
           <div ref={button => this.btnDownload = button}>
             <a href="/" className="button-download">
-              <svg width={15} height={16}>
-                <use xlinkHref={`#${downloadIcon.id}`}/>
-              </svg>
+              <DownloadIcon />
               <span className="button-download__text">Download CV</span>
               <span className="button-download__info">(pdf 1.2Mb)</span>
             </a>
@@ -50,19 +47,17 @@ class About extends PureComponent {
         </div>
         <div className="about__col">
           <div ref={photo => this.myPhoto = photo}>
-            <MyPhoto/>
+            <MyPhoto />
           </div>
           <a href="/" className="button-download">
-            <svg width={15} height={16}>
-              <use xlinkHref={`#${downloadIcon.id}`}/>
-            </svg>
+            <DownloadIcon />
             <span className="button-download__text">Download CV</span>
             <span className="button-download__info">(pdf 1.2Mb)</span>
           </a>
         </div>
       </section>
-    )
+    );
   }
 }
 
-export default About
+export default About;

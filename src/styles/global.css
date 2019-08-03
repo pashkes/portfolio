@@ -171,6 +171,8 @@ p {
 }
 
 .button-download svg {
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
     fill: var(--secondary-color);
 }

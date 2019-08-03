@@ -14,6 +14,11 @@
     width: 24px;
     height: 24px;
     z-index: 0;
+    transition: var(--base-transition);
+}
+
+.pagination__item a:not(.is-active):hover {
+    color: var(--secondary-color);
 }
 
 .pagination__item a::before {
