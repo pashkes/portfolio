@@ -30,7 +30,7 @@ class About extends PureComponent {
     return (
       <section className="about">
         <div className="about__body">
-          <h2 className="h1" ref={h1 => this.title = h1}>Hi, I&rsquo;m Pavel Tarasenko</h2>
+          <h1 className="h1" ref={h1 => this.title = h1}>Hi, I&rsquo;m Pavel Tarasenko</h1>
           <p className="about__subtitle" ref={p => this.subtitle = p}>I&rsquo;m really like creating user interfaces
             which intuitive, convenient and
             beautiful. Of&nbsp;course,

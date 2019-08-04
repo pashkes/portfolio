@@ -5,13 +5,19 @@ import "./pagination.css";
 
 const Pagination = ({ works, currentWork }) => {
   return (
-    <ul className="pagination">
-      {works.sort((current, next) => Number(current) - Number(next) ).map((item, index) => (
-        <li key={item} className={`pagination__item ${currentWork === item ? `is-active` : ``}` }>
-          <Link to={`/work/?project=${item}`}>{++index}</Link>
-        </li>
-      ))}
-    </ul>
+    <nav className="pagination" aria-label={`navigation for works`}>
+      <ul className="pagination__list">
+        {works.sort((current, next) => Number(current) - Number(next)).map((item, index) => (
+          <li
+            key={item}
+            className={`pagination__item ${currentWork === item ? `is-active` : ``}`}
+            aria-label={currentWork === item ? `is current page` : ``}
+          >
+            <Link to={`/work/?project=${item}`}>{++index}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

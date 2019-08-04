@@ -59,7 +59,7 @@ class Skills extends PureComponent {
   render() {
     return (
       <section className="skills">
-        <h2 className="invisible">Skills</h2>
+        <h1 className="invisible">Skills</h1>
         <div className="skills__col">
           <p className="skills__subtitle" ref={p=> this.text = p}>Skills can be&nbsp;taught, personality is&nbsp;inherent. I&nbsp;prefer
             to&nbsp;keep
