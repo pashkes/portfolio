@@ -18,9 +18,11 @@
     color: rgba(255, 255, 255, 0.5);
     transform: translateY(-10px);
 }
-.no-js .form-control .form-control__label {
+
+html[data-body-class='no-js'] .form-control .form-control__label {
     transform: translateY(-10px);
 }
+
 .form-control__field {
     width: 100%;
     border: none;
@@ -52,7 +54,8 @@
     .form-control.is-focused .form-control__label {
         transform: translateY(-20px);
     }
-    .no-js .form-control .form-control__label {
+
+    html[data-body-class='no-js'] .form-control .form-control__label {
         transform: translateY(-20px);
     }
 

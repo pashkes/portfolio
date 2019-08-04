@@ -69,7 +69,7 @@
         justify-content: flex-start;
     }
 }
-.no-js .cube {
+html[data-body-class='no-js'] .cube {
     opacity: 0;
 }
 .cube {
