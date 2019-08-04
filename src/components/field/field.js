@@ -11,7 +11,7 @@ class Field extends PureComponent {
       value: ``,
       filled: false,
     };
-    this.inputRef = React.createRef();
+    this._inputRef = React.createRef();
   }
 
   handleFocus = () => {
@@ -23,7 +23,7 @@ class Field extends PureComponent {
   }
 
   handleChange = ({ target }) => {
-    const inputValue = this.inputRef.current.value;
+    const inputValue = this._inputRef.current.value;
 
     this.setState({ value: target.value })
     if (inputValue.length > 0) {
@@ -43,7 +43,7 @@ class Field extends PureComponent {
           type={type}
           className="form-control__field"
           id={id}
-          ref={this.inputRef}
+          ref={this._inputRef}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onChange={this.handleChange}

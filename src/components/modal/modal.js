@@ -7,22 +7,22 @@ class Modal extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.myTween = new TimelineLite({ paused: true });
-    this.dialog = null;
+    this._myTween = new TimelineLite({ paused: true });
+    this._dialog = null;
   }
 
   componentDidMount() {
-    this.myTween
-      .from(this.dialog, 0.35, {autoAlpha: 0, opacity: 0})
+    this._myTween
+      .from(this._dialog, 0.35, {autoAlpha: 0, opacity: 0})
       .play();
   }
 
   render() {
     const {deactivateModal} = this.props;
     return (
-      <div ref={modal => this.dialog = modal} className={`modal-exp__wrapper`} role="document">
+      <div ref={modal => this._dialog = modal} className={`modal-exp__wrapper`} role="document">
         <button className="modal-exp__close" id="close-modal" onClick={deactivateModal}>
-          <AcrossIcon />
+          <AcrossIcon aria-hidden={true} />
         </button>
         <div className="modal-exp__body">
           <h2 className="modal-exp__title" id="exp-title">Experience</h2>

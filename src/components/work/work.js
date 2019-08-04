@@ -7,62 +7,62 @@ import "./work.css";
 
 class Work extends PureComponent {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.title = null
-    this.subtitle = null
-    this.buttons = null
-    this.myTween = new TimelineLite({ paused: true })
-    this.skills = null;
-    this.previewPhoto = null;
-    this.buttonsMobile = null
+    this._title = null;
+    this._subtitle = null;
+    this._buttons = null;
+    this._myTween = new TimelineLite({ paused: true });
+    this._skills = null;
+    this._previewPhoto = null;
+    this._buttonsMobile = null;
   }
 
   componentDidMount() {
-    this.myTween
-      .from(this.title, 0.25, { autoAlpha: 0, y: -30 })
-      .from(this.subtitle, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this.skills, 0.25, { y: -30, autoAlpha: 0 }, "-=0.1")
-      .from(this.buttons, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this.buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this.previewPhoto, 0.3, { opacity: 0 },"-=0.25")
-      .play()
+    this._myTween
+      .from(this._title, 0.25, { autoAlpha: 0, y: -30 })
+      .from(this._subtitle, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
+      .from(this._skills, 0.25, { y: -30, autoAlpha: 0 }, "-=0.1")
+      .from(this._buttons, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
+      .from(this._buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
+      .from(this._previewPhoto, 0.3, { opacity: 0 },"-=0.25")
+      .play();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    this.myTween.restart(true)
+    this._myTween.restart(true);
   }
 
   render() {
-    const { data, search } = this.props
-    const { project } = search
+    const { data, search } = this.props;
+    const { project } = search;
     const dataWork = data.allMarkdownRemark.edges
         .find((item) => item.node.frontmatter.query === project)
       || data.allMarkdownRemark.edges
-        .find((item) => item.node.frontmatter.query === `1`)
-    const projects = data.allMarkdownRemark.edges.map((item) => item.node.frontmatter.query)
-    const { title, description, skills, demoLink, githubLink, preview } = dataWork.node.frontmatter
+        .find((item) => item.node.frontmatter.query === `1`);
+    const projects = data.allMarkdownRemark.edges.map((item) => item.node.frontmatter.query);
+    const { title, description, skills, demoLink, githubLink, preview } = dataWork.node.frontmatter;
 
     return (
       <section className="work">
         <div className="work__inner">
           <div className="work__info">
-            <h1 className="work__title h1" ref={h2 => this.title = h2}>{title}</h1>
-            <p className="work__subtitle" ref={p => this.subtitle = p} dangerouslySetInnerHTML={{__html: description}} />
-            <ul className="work__techs" ref={ul => this.skills = ul}>
+            <h1 className="work__title h1" ref={h2 => this._title = h2}>{title}</h1>
+            <p className="work__subtitle" ref={p => this._subtitle = p} dangerouslySetInnerHTML={{__html: description}} />
+            <ul className="work__techs" ref={ul => this._skills = ul}>
               {skills.split(` `).map((skill) => <li
                 key={skill}>{skill} </li>)}
             </ul>
-            <div className="work__buttons only-for-desktop" ref={buttons => this.buttons = buttons}>
+            <div className="work__buttons only-for-desktop" ref={buttons => this._buttons = buttons}>
               <a href={demoLink} className="work__button button">Discover</a>
               <a href={githubLink} className="work__button button">view code</a>
             </div>
           </div>
           <div className="work__screen">
-            <div className="work__preview" ref={img => this.previewPhoto = img}>
+            <div className="work__preview" ref={img => this._previewPhoto = img}>
               <img src={`/img/${preview}`} alt={`Screen ${title}`}/>
             </div>
-            <div className="work__buttons only-for-mobile" ref={buttonsMobile => this.buttonsMobile = buttonsMobile}>
+            <div className="work__buttons only-for-mobile" ref={buttonsMobile => this._buttonsMobile = buttonsMobile}>
               <a href={demoLink} className="work__button button">Discover</a>
               <a href={githubLink} className="work__button button">view code</a>
             </div>

@@ -42,17 +42,17 @@ class Skills extends PureComponent {
   constructor(props) {
     super(props)
 
-    this.courses = [];
-    this.skills = [];
-    this.text = null;
-    this.myTween = new TimelineLite({ paused: true });
+    this._courses = [];
+    this._skills = [];
+    this._text = null;
+    this._myTween = new TimelineLite({ paused: true });
   }
 
   componentDidMount() {
-    this.myTween
-      .from(this.text, 0.6, {autoAlpha: 0, x: -60})
-      .staggerFrom(this.courses, 0.25, { x: -10, opacity: 0}, 0.1, `-=.3`)
-      .staggerFrom(this.skills, 0.25, { x: -10, opacity: 0}, 0.1)
+    this._myTween
+      .from(this._text, 0.6, {autoAlpha: 0, x: -60})
+      .staggerFrom(this._courses, 0.25, { x: -10, opacity: 0}, 0.1, `-=.3`)
+      .staggerFrom(this._skills, 0.25, { x: -10, opacity: 0}, 0.1)
       .play();
   }
 
@@ -61,13 +61,13 @@ class Skills extends PureComponent {
       <section className="skills">
         <h1 className="invisible">Skills</h1>
         <div className="skills__col">
-          <p className="skills__subtitle" ref={p=> this.text = p}>Skills can be&nbsp;taught, personality is&nbsp;inherent. I&nbsp;prefer
+          <p className="skills__subtitle" ref={p=> this._text = p}>Skills can be&nbsp;taught, personality is&nbsp;inherent. I&nbsp;prefer
             to&nbsp;keep
             learning, continue challenging myself, and do&nbsp;interesting things that matter.</p>
           <ul className="skills__courses">
             {
               courses.map(({ name, cert }, index) => (
-                <li key={name} ref={course => this.courses[index] = course}>
+                <li key={name} ref={course => this._courses[index] = course}>
                   <p className="skills__name" dangerouslySetInnerHTML={{__html: name}} />
                   <p className="skills__info">HTML Academy&nbsp;/ <a href={cert} className="skills__cert-link" target={`blank`} rel="noopener noreferrer">certificate</a></p>
                 </li>
@@ -78,7 +78,7 @@ class Skills extends PureComponent {
         <div className="skills__col">
           <ul className="skills__list">
             {
-              skills.map((item, index) => <li ref={skill => this.skills[index] = skill} key={item}>{item}</li>)
+              skills.map((item, index) => <li ref={skill => this._skills[index] = skill} key={item}>{item}</li>)
             }
           </ul>
         </div>
