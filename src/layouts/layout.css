@@ -69,8 +69,12 @@
         justify-content: flex-start;
     }
 }
+.no-js {
+    opacity: 0;
+}
 .cube {
     position: fixed;
+    opacity: 1;
     z-index: 1;
 }
 .cube svg {
