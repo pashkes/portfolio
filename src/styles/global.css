@@ -187,11 +187,22 @@ p {
 .button:hover:before, .button:active:before {
     transform: scaleY(1);
 }
+
 .button--disabled {
     color: rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.3);
+    background-color: transparent;
     cursor: not-allowed;
 }
+
+.button--disabled:hover {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.button--disabled:hover::before, .button--disabled:active:before {
+    transform: scale(0);
+}
+
 .button-download {
     position: relative;
     display: inline-flex;

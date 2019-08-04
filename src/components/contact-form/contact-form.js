@@ -1,56 +1,21 @@
-import React, { PureComponent } from "react"
-import Field from "../field/field"
+import React from "react"
 import { Link } from "gatsby"
+import compose from "recompose/compose"
 
 import "./contact-form.css"
+
 import SEO from "../seo/seo"
+import Field from "../field/field"
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+import withContactForm from "./with-contact-form"
+import withSubmittingForm from "./with-submitting-form"
 
-class ContactForm extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = { name: ``, email: ``, message: ``, isSending: false, isSent: false, fieldIsFill: false, error: `` }
-  }
-
-  handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value })
-  }
-
-  handleSubmit = (e) => {
-    this.setState({ isSending: true })
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
-    })
-      .then(() => {
-        this.setState({ name: ``, email: ``, message: ``, isSending: false, isSent: true })
-      })
-      .catch(error => {
-        this.setState({
-          name: ``,
-          email: ``,
-          message: ``,
-          isSending: false,
-          isSent: true,
-          error: `Something went wrong, check filled data`,
-        })
-        throw error
-      })
-
-    e.preventDefault()
-  }
-
-  render() {
-    const { name, email, message, isSending, isSent, error } = this.state
-    return (
-      <>
-        {isSent ?
+const ContactForm = (props) => {
+  const { name, email, message, onChange, isSending, isSent, error, onSubmit } = props
+  return (
+    <>
+      {
+        isSent ?
           <>
             <SEO description={`Portfolio`} title="The form has been success sent"/>
             <p className={`success-sent-text`}>Your message has been successfully send. I&rsquo;ll write you
@@ -60,7 +25,7 @@ class ContactForm extends PureComponent {
             </div>
           </>
           :
-          <form className="contact-form" onSubmit={this.handleSubmit} id="contacts" action={`/success-sent/`}
+          <form className="contact-form" onSubmit={onSubmit} id="contacts" action={`/success-sent/`}
                 name="contact"
                 method="POST"
                 data-netlify="true">
@@ -70,7 +35,7 @@ class ContactForm extends PureComponent {
               <div className="contact-form__fields">
                 <Field
                   id={`contacts-name`}
-                  onChange={this.handleChange}
+                  onChange={onChange}
                   labelText={`Name`}
                   value={name}
                   name={`name`}
@@ -78,7 +43,7 @@ class ContactForm extends PureComponent {
                 />
                 <Field
                   type={`email`}
-                  onChange={this.handleChange}
+                  onChange={onChange}
                   id={`contacts-email`}
                   value={email}
                   name={`email`}
@@ -89,7 +54,7 @@ class ContactForm extends PureComponent {
               </div>
               <Field
                 id={`contacts-message`}
-                onChange={this.handleChange}
+                onChange={onChange}
                 value={message}
                 name={`message`}
                 labelText={`What I need to know?`}
@@ -97,13 +62,16 @@ class ContactForm extends PureComponent {
             </div>
             {error && <span aria-live="assertive" role="banner">{error}</span>}
             <button
-              className={`contact-form__submit button ${isSending ? `button--disabled` : ``}`}
+              className={`contact-form__submit button ${isSending && `button--disabled`}`}
               disabled={isSending}
               type="submit">{isSending ? `Sending...` : `Get in touch`}</button>
-          </form>}
-      </>
-    )
-  }
+          </form>
+      }
+    </>
+  )
 }
-
-export default ContactForm
+const enhance = compose(
+  withContactForm,
+  withSubmittingForm,
+)
+export default enhance(ContactForm)

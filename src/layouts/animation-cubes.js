@@ -47,17 +47,18 @@ class AnimationCubes extends PureComponent {
   }
 
   render() {
+    const jsIsEnabled = document.querySelector(`html`).classList.contains(`no-js`);
     return (
       <>
-        <div className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
-        <div className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
+        <div hidden={jsIsEnabled} className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
+        <div hidden={jsIsEnabled} className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
+        <div hidden={jsIsEnabled} className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
+        <div hidden={jsIsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div hidden={jsIsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
              aria-hidden={true}>
           <CubeSmRotate/></div>
-        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
+        <div hidden={jsIsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div hidden={jsIsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
           <CubeSm/>
         </div>
       </>

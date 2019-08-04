@@ -19,7 +19,7 @@
     transform: translateY(-10px);
 }
 
-html[data-body-class='no-js'] .form-control .form-control__label {
+.no-js .form-control .form-control__label {
     transform: translateY(-10px);
 }
 
@@ -55,7 +55,7 @@ html[data-body-class='no-js'] .form-control .form-control__label {
         transform: translateY(-20px);
     }
 
-    html[data-body-class='no-js'] .form-control .form-control__label {
+    .no-js .form-control .form-control__label {
         transform: translateY(-20px);
     }
 

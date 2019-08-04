@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HTML(props) {
   return (
-    <html data-body-class="no-js" {...props.htmlAttributes}>
+    <html className="no-js" {...props.htmlAttributes}>
     <head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -23,7 +23,7 @@ export default function HTML(props) {
     <script dangerouslySetInnerHTML={{
       __html: `
             window.addEventListener('DOMContentLoaded', function() {
-                document.querySelector('html').setAttribute('data-body-class', 'js')
+                document.querySelector('html').classList.remove('no-js')
             });
             `
     }}/>
