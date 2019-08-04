@@ -175,10 +175,10 @@ p {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
-.button:hover, .button:focus, .button:active {
+.button:hover, .button:active {
     color: var(--primary-color);
 }
-.button:hover:before, .button:focus:before, .button:active:before {
+.button:hover:before, .button:active:before {
     transform: scaleY(1);
 }
 

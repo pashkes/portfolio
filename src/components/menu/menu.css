@@ -27,6 +27,9 @@
 .menu__link.is-active {
     color: var(--secondary-color);
 }
+.menu__link:not(.is-active):focus {
+    outline: none;
+}
 
 .menu__link:hover,
 .menu__link:focus {
@@ -46,7 +49,6 @@
         text-align: left;
         font-size: 24px;
         line-height: 1.16;
-        outline: none;
     }
 
     .menu__link:hover,
@@ -66,6 +68,10 @@
     .menu__link.is-active:focus,
     .menu__link.is-active:hover {
         transform: translateX(0);
+    }
+    .menu__link.is-active:focus::before,
+    .menu__link.is-active:focus::after {
+        display: none;
     }
     .menu__link.is-active::before,
     .menu__link.is-active::after {
