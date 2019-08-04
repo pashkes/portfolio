@@ -17,6 +17,9 @@ class AnimationCubes extends PureComponent {
     this._cubeSMRotate1 = null
     this._cubeSMRotate2 = null
     this._mytimeLineCubes = new TimelineLite({ paused: true })
+    this.state = {
+      isJsEnabled: false
+    }
   }
 
   componentDidMount() {
@@ -47,18 +50,17 @@ class AnimationCubes extends PureComponent {
   }
 
   render() {
-    const jsIsEnabled = document.querySelector(`html`).classList.contains(`no-js`);
     return (
       <>
-        <div hidden={jsIsEnabled} className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
+        <div hidden={this.state.isJsEnabled} className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
              aria-hidden={true}>
           <CubeSmRotate/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div hidden={jsIsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div hidden={this.state.isJsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
           <CubeSm/>
         </div>
       </>
