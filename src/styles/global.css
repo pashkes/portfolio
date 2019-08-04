@@ -118,6 +118,7 @@ p {
 }
 
 .button {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     width: 100%;
@@ -139,7 +140,6 @@ p {
 
 .button:hover,
 .button:active {
-    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: #101626;
     text-decoration: none;
@@ -148,7 +148,6 @@ p {
 .button:focus {
     border-color: var(--secondary-color);
     color: var(--secondary-color);
-    background-color: var(--primary-color);
     outline: none;
     text-decoration: none;
     cursor: pointer;
@@ -160,6 +159,29 @@ p {
     border-color: var(--grey-color);
     color: var(--grey-color);
 }
+
+.button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    transform: scaleY(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.button:hover, .button:focus, .button:active {
+    color: var(--primary-color);
+}
+.button:hover:before, .button:focus:before, .button:active:before {
+    transform: scaleY(1);
+}
+
 
 .button-download {
     display: inline-flex;

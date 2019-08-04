@@ -30,7 +30,7 @@
     width: 8px;
     height: 8px;
     background-color: #DADADA;
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg) scale(.7);
     z-index: -1;
     transition: var(--base-transition);
 }
@@ -44,6 +44,7 @@
 }
 .pagination__item.is-active a::before {
     background-color: var(--secondary-color);
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
 
 @media (min-width: 1024px) {
