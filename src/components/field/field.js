@@ -5,56 +5,40 @@ import "./field.css"
 
 class Field extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      focused: false,
-      value: ``,
-      filled: false,
-    };
-    this._inputRef = React.createRef();
-  }
-
-  handleFocus = () => {
-    this.setState({ focused: true });
-  }
-
-  handleBlur = () => {
-    this.setState({ focused: false });
-  }
-
-  handleChange = ({ target }) => {
-    const inputValue = this._inputRef.current.value;
-
-    this.setState({ value: target.value })
-    if (inputValue.length > 0) {
-      this.setState({ filled: true });
-    } else {
-      this.setState({ filled: false });
+      isFocused: false,
     }
   }
 
+  handleFocus = () => {
+    this.setState({ isFocused: true })
+  }
+
+  handleBlur = () => {
+    this.setState({ isFocused: false })
+  }
+
   render() {
-    const { type = `text`, id, labelText, isRequired = false, name, autofocus = false, pattern = `*` } = this.props;
-    const { focused, filled, value } = this.state;
+    const { type = `text`, id, labelText, isRequired = false, name, pattern=`.*?`, onChange, value} = this.props
+    const { isFocused} = this.state;
     return (
-      <div className={`form-control ${focused || filled ? `is-focused` : ``} `}>
+      <div className={`form-control ${value.length > 0 || isFocused ? `is-focused` : ``} `}>
         <label className="form-control__label" htmlFor={id}>{labelText}</label>
         <input
           type={type}
           className="form-control__field"
           id={id}
-          ref={this._inputRef}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          onChange={this.handleChange}
+          onChange={onChange}
           value={value}
           name={name}
           required={isRequired}
-          autoFocus={autofocus}
           pattern={pattern}
         />
       </div>
-    );
+    )
   }
 }
 
@@ -66,6 +50,8 @@ Field.propTypes = {
   name: PropTypes.string,
   autofocus: PropTypes.bool,
   pattern: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default Field;

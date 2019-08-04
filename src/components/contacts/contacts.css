@@ -9,6 +9,11 @@
 .contacts__title {
     text-align: center;
 }
+.contacts__button-home {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+}
 
 .contacts__footer {
     display: flex;
