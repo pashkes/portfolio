@@ -31,6 +31,10 @@ input:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;;
 }
 
+.page-wrapper {
+    overflow: hidden;
+}
+
 .container {
     width: 100%;
     padding-right: 16px;
@@ -175,21 +179,24 @@ p {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
+
 .button:hover, .button:active {
     color: var(--primary-color);
 }
+
 .button:hover:before, .button:active:before {
     transform: scaleY(1);
 }
 
-
 .button-download {
+    position: relative;
     display: inline-flex;
     padding: 8px 0;
     align-items: center;
     text-decoration: none;
     color: inherit;
     transition: var(--base-transition);
+    z-index: 1;
 }
 
 .button-download svg {
@@ -225,14 +232,16 @@ p {
         min-width: 145px;
     }
 }
+
 .success-sent-text {
     padding-top: 110px;
     font-size: 16px;
     font-family: 'Roboto Mono', Verdana, sans-serif;
     text-align: center;
 }
+
 @media screen and (min-width: 1024px) {
     .success-sent-text {
-      padding-top: 40px;
+        padding-top: 40px;
     }
 }

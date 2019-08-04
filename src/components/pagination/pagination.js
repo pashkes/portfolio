@@ -11,9 +11,8 @@ const Pagination = ({ works, currentWork }) => {
           <li
             key={item}
             className={`pagination__item ${currentWork === item ? `is-active` : ``}`}
-            aria-label={currentWork === item ? `is current page` : ``}
           >
-            <Link to={`/work/?project=${item}`}>{++index}</Link>
+            <Link to={`/work/?project=${item}`} aria-label={currentWork === item ? `is current page` : ``}>{++index}</Link>
           </li>
         ))}
       </ul>

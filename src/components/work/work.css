@@ -1,5 +1,6 @@
 .work {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
 }
 .work__inner {
@@ -40,6 +41,8 @@
 
 .work__preview {
     margin-bottom: 28px;
+    margin-right: -48px;
+    margin-left: -48px;
     display: flex;
     justify-content: center;
 }
@@ -58,11 +61,15 @@
 .work__button + * {
     margin-top: 10px;
 }
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+    .work__preview {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+    @media (min-width: 1024px) {
     .work {
         padding-top: 48px;
-        flex-grow: 1;
     }
 
     .work__inner {
@@ -78,7 +85,6 @@
     }
 
     .work__buttons {
-        margin-bottom: 0;
         margin-top: auto;
         flex-direction: row;
         align-items: center;
