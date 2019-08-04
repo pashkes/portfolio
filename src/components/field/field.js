@@ -34,7 +34,7 @@ class Field extends PureComponent {
   }
 
   render() {
-    const { type = `text`, id, labelText, isRequired = false, name, autofocus = false, isAutocomplete = false, pattern = `*` } = this.props;
+    const { type = `text`, id, labelText, isRequired = false, name, autofocus = false, pattern = `*` } = this.props;
     const { focused, filled, value } = this.state;
     return (
       <div className={`form-control ${focused || filled ? `is-focused` : ``} `}>
@@ -51,7 +51,6 @@ class Field extends PureComponent {
           name={name}
           required={isRequired}
           autoFocus={autofocus}
-          autoComplete={isAutocomplete ? `off` : ``}
           pattern={pattern}
         />
       </div>
@@ -66,7 +65,6 @@ Field.propTypes = {
   isRequired: PropTypes.bool,
   name: PropTypes.string,
   autofocus: PropTypes.bool,
-  isAutocomplete: PropTypes.bool,
   pattern: PropTypes.string,
 }
 
