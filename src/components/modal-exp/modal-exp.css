@@ -77,6 +77,10 @@
     cursor: pointer;
 }
 
+.modal-exp__close svg {
+    width: 18px;
+    height: 18px;
+}
 .modal-exp__close:hover svg {
     transform: rotate(90deg);
 }
