@@ -17,9 +17,6 @@ class AnimationCubes extends PureComponent {
     this._cubeSMRotate1 = null
     this._cubeSMRotate2 = null
     this._mytimeLineCubes = new TimelineLite({ paused: true })
-    this.state = {
-      isJsEnabled: false
-    }
   }
 
   componentDidMount() {
@@ -27,8 +24,8 @@ class AnimationCubes extends PureComponent {
     const heightV = window.innerHeight
     this._mytimeLineCubes
       .from(this._cubeXL, .3, { opacity: 0 })
-      .from(this._cubeXL, 80, { repeat: -1, y: 0.40 * heightV, x: 0.78 * widthV, yoyo: true })
-      .to(this._cubeXL, 80, { x: 0.10 * heightV, y: 0, repeat: -1, yoyo: true }, 0)
+      .from(this._cubeXL, 80, { repeat: -1, y: 0.70 * heightV, x: 0.78 * widthV, yoyo: true })
+      .to(this._cubeXL, 80, { x: 0.90 * widthV, y: 0.2 * heightV, repeat: -1, yoyo: true }, 0)
       .from(this._cubeMD, .3, { opacity: 0 }, "-=80")
       .from(this._cubeMD, 90, { repeat: -1, y: 0.36 * heightV, x: 0.69 * widthV, yoyo: true }, "-=80")
       .to(this._cubeMD, 90, { x: 0.28 * widthV, y: 0.90 * heightV, repeat: -1, yoyo: true }, 0)
@@ -52,15 +49,15 @@ class AnimationCubes extends PureComponent {
   render() {
     return (
       <>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
+        <div className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
+        <div className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
              aria-hidden={true}>
           <CubeSmRotate/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div hidden={this.state.isJsEnabled} className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
+        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
           <CubeSm/>
         </div>
       </>
