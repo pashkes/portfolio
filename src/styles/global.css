@@ -138,7 +138,9 @@ p {
     text-transform: uppercase;
     text-align: center;
     background-color: transparent;
-    transition: var(--base-transition);
+    transition-property: background-color, border-bottom-color, border-left-color, border-right-color, border-top-color;
+    transition-delay: 0.15s;
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
     cursor: pointer;
 }
 
@@ -271,9 +273,14 @@ p {
 .fade {
     opacity: 0;
 }
-
+.scale-to-right {
+    transform: scaleX(0);
+    opacity: 0;
+}
 .no-js .slide-down,
 .no-js .slide-right,
-.no-js .fade{
+.no-js .fade,
+.no-js .scale-to-right {
     opacity: 1;
+    transform: none;
 }

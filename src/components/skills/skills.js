@@ -66,7 +66,7 @@ const Skills = () => {
             courses.map(({ name, cert }, index) => (
               <li key={name} className={`slide-right`} ref={course => _courses.current[index] = course}>
                 <p className="skills__name" dangerouslySetInnerHTML={{ __html: name }}/>
-                <p className="skills__info">HTML Academy&nbsp;/ <a href={cert} className="skills__cert-link"
+                <p className="skills__info">HTML Academy&nbsp;/ <a href={cert} className="skills__cert-link link"
                                                                    target={`blank`}
                                                                    rel="noopener noreferrer">certificate</a></p>
               </li>

@@ -24,10 +24,10 @@ class AnimationCubes extends PureComponent {
     const heightV = window.innerHeight
     this._mytimeLineCubes
       .from(this._cubeXL, .3, { opacity: 0 })
-      .from(this._cubeXL, 80, { repeat: -1, y: 0.70 * heightV, x: 0.78 * widthV, yoyo: true })
-      .to(this._cubeXL, 80, { x: 0.90 * widthV, y: 0.4 * heightV, repeat: -1, yoyo: true }, 0)
+      .from(this._cubeXL, 80, { repeat: -1, y: 0.70 * heightV, scale: 0.8, x: 0.78 * widthV, yoyo: true })
+      .to(this._cubeXL, 80, { x: 0.90 * widthV, y: 0.4 * heightV, scale: 0.5, repeat: -1, yoyo: true }, 0)
       .from(this._cubeMD, .3, { opacity: 0 }, "-=80")
-      .from(this._cubeMD, 90, { repeat: -1, y: 0.36 * heightV, x: 0.69 * widthV, yoyo: true }, "-=80")
+      .from(this._cubeMD, 90, { repeat: -1, y: 0.36 * heightV, scale: 1.5, x: 0.69 * widthV, yoyo: true }, "-=80")
       .to(this._cubeMD, 90, { x: 0.28 * widthV, y: 0.90 * heightV, repeat: -1, yoyo: true }, 0)
       .from(this._cubeLG, .3, { opacity: 0 }, "-=90")
       .from(this._cubeLG, 80, { repeat: -1, y: 0.8 * heightV, x: 0.5 * widthV, yoyo: true }, "-=90")

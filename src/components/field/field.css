@@ -22,7 +22,21 @@
 .no-js .form-control .form-control__label {
     transform: translateY(-10px);
 }
-
+.form-control::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    transform: scale(0);
+    transform-origin: 0 0;
+    background-color: var(--secondary-color);
+    transition: 0.20s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.form-control.is-focused::before {
+    transform: scale(1);
+}
 .form-control__field {
     width: 100%;
     border: none;
@@ -36,7 +50,7 @@
     transition: var(--base-transition);
 }
 
-.form-control__field:focus {
+.no-js .form-control__field:focus {
     border-bottom-color: var(--secondary-color);
 }
 

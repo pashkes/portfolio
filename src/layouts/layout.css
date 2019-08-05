@@ -87,6 +87,7 @@
 
     .layout__row {
         grid-template-columns: 1fr 3.35fr;
+        padding-bottom: 6px;
     }
     .layout__col {
         justify-content: center;

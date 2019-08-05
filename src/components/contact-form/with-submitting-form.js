@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-
+import { navigate } from "gatsby"
 
 const ERROR = `Something went wrong, check filled data`
 
@@ -24,21 +24,22 @@ const withSubmittingForm = (Component) => (props) => {
       .then(() => {
         setFlagSending(false)
         setFlagSent(true)
+        navigate("/success-sent/")
       })
-      .catch(error => {
+      .catch(() => {
         setFlagSending(false)
         setError(ERROR)
-        throw error
       })
   }
-
-  return (<Component
-    {...props}
-    isSending={isSending}
-    isSent={isSent}
-    error={error}
-    onSubmit={handleSubmit}
-  />)
+  return (
+    <Component
+      {...props}
+      isSending={isSending}
+      isSent={isSent}
+      error={error}
+      onSubmit={handleSubmit}
+    />
+  )
 }
 
 export default withSubmittingForm

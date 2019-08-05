@@ -80,4 +80,7 @@
     .skills__list > * + * {
         margin-top: 24px;
     }
+    .skills__cert-link::before {
+        bottom: 0.27em;
+    }
 }
