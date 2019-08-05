@@ -40,7 +40,7 @@ const About = () => {
         </div>
       </div>
       <div className="about__col">
-        <div className={`slide-down`} ref={myPhoto}>
+        <div className={`fade`} ref={myPhoto}>
           <MyPhoto/>
         </div>
         <a href="/" className="button-download">
