@@ -1,4 +1,4 @@
-import React, { PureComponent, useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { TimelineLite } from "gsap"
 
 import "./skills.css"

@@ -50,10 +50,10 @@ class AnimationCubes extends PureComponent {
     const isAnimStated = this._mytimeLineCubes.isActive();
     return (
       <>
-        <div className={`cube cube--xl ${isAnimStated ? `is-hidden` : ``}`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
-        <div className={`cube cube--md ${isAnimStated ? `is-hidden` : ``}`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--lg ${isAnimStated ? `is-hidden` : ``}`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--sm ${isAnimStated ? `is-hidden` : ``}`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div className={`cube cube--xl ${isAnimStated ? `` : `is-hidden`}`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
+        <div className={`cube cube--md ${isAnimStated ? `` : `is-hidden`}`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--lg ${isAnimStated ? `` : `is-hidden`}`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--sm ${isAnimStated ? `` : `is-hidden`}`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
         <div className={`cube cube--sm cube--rotate ${isAnimStated && `is-hidden`}`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
              aria-hidden={true}>
           <CubeSmRotate/></div>
