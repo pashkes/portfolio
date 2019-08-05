@@ -48,7 +48,7 @@ const Skills = () => {
     myTween
       .to(text.current, 0.6, { opacity: 1, y: 0 })
       .staggerTo(_courses.current, 0.25, { x: 0, opacity: 1 }, 0.1, `-=.3`)
-      .staggerTo(_skills.current, 0.25, { x: 0, opacity: 1 }, 0.1)
+      .staggerTo(_skills.current, 0.25, { x: 0, opacity: 1 }, 0.1, `-=.4`)
       .play()
     return () => myTween.clear();
   })
