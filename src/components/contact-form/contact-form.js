@@ -36,20 +36,21 @@ const ContactForm = (props) => {
                 <Field
                   id={`contacts-name`}
                   onChange={onChange}
-                  labelText={`Name`}
+                  label={`Name`}
                   value={name}
                   name={`name`}
                   isRequired={true}
                 />
                 <Field
-                  type={`email`}
                   onChange={onChange}
                   id={`contacts-email`}
                   value={email}
                   name={`email`}
-                  labelText={`E-mail`}
+                  label={`E-mail`}
                   isRequired={true}
+                  type={`email`}
                   pattern={`[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`}
+                  inputmode="email"
                 />
               </div>
               <Field
@@ -57,7 +58,7 @@ const ContactForm = (props) => {
                 onChange={onChange}
                 value={message}
                 name={`message`}
-                labelText={`What I need to know?`}
+                label={`What I need to know?`}
               />
             </div>
             {error && <span aria-live="assertive" role="banner">{error}</span>}

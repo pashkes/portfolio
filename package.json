@@ -43,6 +43,7 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^4.0.1",
     "prettier": "^1.18.2",
     "simple-react-validator": "^1.2.2"
   },

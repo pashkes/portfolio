@@ -1,45 +1,32 @@
-import React from "react"
+import React, { useState } from "react"
 import AriaModal from "react-aria-modal"
 
 import "./modal-exp.css"
 import Modal from "../modal/modal"
 
-class ModalExp extends React.Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      modalActive: false,
-    }
-  }
+const ModalExp = () => {
+  const [isModalActive, setActiveModal] = useState(false);
+  const activateModal = () => setActiveModal(!isModalActive);
+  const deactivateModal = () => setActiveModal(!isModalActive);
 
-  activateModal = () => {
-    this.setState({ modalActive: true })
-  }
-
-  deactivateModal = () => {
-    this.setState({ modalActive: false })
-  }
-
-  render() {
-    return (
-      <>
-        <button className="button-experience" onClick={this.activateModal}>experience</button>
-        {this.state.modalActive && <AriaModal
-          titleText="My experience"
-          onExit={this.deactivateModal}
-          initialFocus="#close-modal"
-          underlayColor="rgba(0,0,0,0)"
-          dialogClass={`modal-exp`}
-          titleId='exp-title'
-          dialogStyle={{ display: `inline-flex`, width: `100%` }}
-          underlayStyle={{ display: `flex`, alignItems: `center`, justifyContent: `center` }}
-        >
-          <Modal deactivateModal={this.deactivateModal}/>
-        </AriaModal>}
-      </>
-    )
-  }
+  return (
+    <>
+      <button className="button-experience" onClick={activateModal}>experience</button>
+      {isModalActive && <AriaModal
+        titleText="My experience"
+        onExit={deactivateModal}
+        initialFocus="#close-modal"
+        underlayColor="rgba(0,0,0,0)"
+        dialogClass={`modal-exp`}
+        titleId='exp-title'
+        dialogStyle={{ display: `inline-flex`, width: `100%` }}
+        underlayStyle={{ display: `flex`, alignItems: `center`, justifyContent: `center` }}
+      >
+        <Modal deactivateModal={deactivateModal}/>
+      </AriaModal>}
+    </>
+  )
 }
 
 export default ModalExp

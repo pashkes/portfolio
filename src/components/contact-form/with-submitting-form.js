@@ -1,54 +1,44 @@
-import React, { PureComponent } from "react"
+import React, { useState } from "react"
 
 
-const ERROR = `Something went wrong, check filled data`;
+const ERROR = `Something went wrong, check filled data`
 
 const encode = (data) => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
 }
+const withSubmittingForm = (Component) => (props) => {
+  const [isSending, setFlagSending] = useState(false)
+  const [isSent, setFlagSent] = useState(false)
+  const [error, setError] = useState(null)
 
-const withSubmittingForm = (Component) => {
-  class WithSubmittingForm extends PureComponent {
-    constructor(props) {
-      super(props)
-      this.state = { isSending: false, isSent: false, error: null }
-    }
-
-    handleSubmit = (e) => {
-      e.preventDefault();
-      this.setState({ isSending: true })
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...this.props }),
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setFlagSending(true)
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...props }),
+    })
+      .then(() => {
+        setFlagSending(false)
+        setFlagSent(true)
       })
-        .then(() => {
-          this.setState({ isSending: false, isSent: true })
-        })
-        .catch(error => {
-          this.setState({
-            isSending: false,
-            error: ERROR,
-          })
-          throw error
-        })
-
-    }
-
-    render() {
-      return (
-        <Component
-          {...this.props}
-          {...this.state}
-          onSubmit={this.handleSubmit}
-        />
-      )
-    }
+      .catch(error => {
+        setFlagSending(false)
+        setError(ERROR)
+        throw error
+      })
   }
 
-  return WithSubmittingForm
+  return (<Component
+    {...props}
+    isSending={isSending}
+    isSent={isSent}
+    error={error}
+    onSubmit={handleSubmit}
+  />)
 }
 
 export default withSubmittingForm

@@ -260,3 +260,14 @@ p {
         padding-top: 40px;
     }
 }
+.slide-down {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+.slide-right {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+.fade {
+    opacity: 0;
+}
