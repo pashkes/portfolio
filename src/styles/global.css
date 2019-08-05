@@ -272,6 +272,8 @@ p {
     opacity: 0;
 }
 
-.no-js .slide-down {
+.no-js .slide-down,
+.no-js .slide-right,
+.no-js .fade{
     opacity: 1;
 }
