@@ -271,3 +271,7 @@ p {
 .fade {
     opacity: 0;
 }
+
+.no-js .slide-down {
+    opacity: 1;
+}
