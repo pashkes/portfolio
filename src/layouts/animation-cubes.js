@@ -47,17 +47,18 @@ class AnimationCubes extends PureComponent {
   }
 
   render() {
+    const isAnimStated = this._mytimeLineCubes.isActive();
     return (
       <>
-        <div className={`cube cube--xl`} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
-        <div className={`cube cube--md`} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--lg`} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
-        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div className={`cube cube--sm cube--rotate`} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
+        <div className={`cube cube--xl`} hidden={isAnimStated} ref={cubeLg => this._cubeXL = cubeLg} aria-hidden={true}><CubeLg/></div>
+        <div className={`cube cube--md`} hidden={isAnimStated} ref={cubeMd => this._cubeMD = cubeMd} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--lg`} hidden={isAnimStated} ref={cubeLG => this._cubeLG = cubeLG} aria-hidden={true}><CubeMd/></div>
+        <div className={`cube cube--sm`} hidden={isAnimStated} ref={cubeSM => this._cubeSM = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div className={`cube cube--sm cube--rotate`} hidden={isAnimStated} ref={cubeSMRotate => this._cubeSMRotate = cubeSMRotate}
              aria-hidden={true}>
           <CubeSmRotate/></div>
-        <div className={`cube cube--sm`} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
-        <div className={`cube cube--sm cube--rotate`} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
+        <div className={`cube cube--sm`} hidden={isAnimStated} ref={cubeSM => this._cubeSMRotate1 = cubeSM} aria-hidden={true}><CubeSm/></div>
+        <div className={`cube cube--sm cube--rotate`} hidden={isAnimStated} ref={cubeSM => this._cubeSMRotate2 = cubeSM} aria-hidden={true}>
           <CubeSm/>
         </div>
       </>
