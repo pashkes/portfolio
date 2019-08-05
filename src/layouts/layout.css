@@ -88,10 +88,15 @@
     .layout__row {
         grid-template-columns: 1fr 3.35fr;
     }
-
+    .layout__col {
+        justify-content: center;
+    }
     .layout__col--nav {
-        display: block;
-        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 36px;
+        padding-bottom: 36px;
     }
 
     .layout__footer .layout__social {

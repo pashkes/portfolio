@@ -20,7 +20,7 @@
 
 @media (min-width: 1024px) {
     .contact-form {
-        margin-bottom: 78px;
+        margin-bottom: 0;
     }
 
     .contact-form__body {

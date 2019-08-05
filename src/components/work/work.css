@@ -69,11 +69,14 @@
 }
     @media (min-width: 1024px) {
     .work {
+        display: grid;
+        grid-template-rows: 1fr auto;
         padding-top: 48px;
     }
 
     .work__inner {
         grid-template-columns: 0.73fr 1fr;
+        align-items: center;
     }
 
     .work__buttons.only-for-desktop {
@@ -85,9 +88,9 @@
     }
 
     .work__buttons {
-        margin-top: auto;
         flex-direction: row;
         align-items: center;
+        margin-bottom: 0;
     }
 
     .work__button + * {
@@ -102,7 +105,7 @@
     }
 
     .work__techs {
-        margin-bottom: 24px;
+        margin-bottom: 58px;
     }
 
     .work__techs li {

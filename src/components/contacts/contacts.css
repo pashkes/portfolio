@@ -23,7 +23,8 @@
 
 @media (min-width: 1024px) {
     .contacts {
-        padding-top: 52px;
+        padding-top: 48px;
+        padding-bottom: 48px;
     }
 
     .contacts__title {

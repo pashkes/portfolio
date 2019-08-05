@@ -68,6 +68,7 @@
 
 @media (min-width: 1024px) {
     .pagination {
+        padding-top: 48px;
         margin-bottom: -42px;
     }
 }

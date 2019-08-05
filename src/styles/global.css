@@ -5,7 +5,7 @@
     --base-font-size: 14px;
     --base-transition: 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
     --sm-screen: 425px;
-    --header-min-height: 85px
+    --header-min-height: 62px
 }
 
 body {
