@@ -16,15 +16,17 @@ const ContactForm = (props) => {
   let messageRef = useRef(null)
   let buttonRef = useRef(null)
   const myTween = new TimelineLite({ paused: true })
-
   useEffect(() => {
+    const setFocusInputName = () => nameRef.current.querySelector(`input`).focus()
     myTween
-      .to(nameRef.current, .25, {opacity: 1, scaleX: 1, transformOrigin: '0 0' }, "+=0.25")
-      .to(emailRef.current, .25, {opacity: 1, scaleX: 1, transformOrigin: '0 0' }, "-=0.065")
-      .to(messageRef.current, .25, {opacity: 1, scaleX: 1, transformOrigin: '0 0' }, "-=0.1")
+      .to(nameRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "+=0.25")
+      .to(emailRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "-=0.065")
+      .to(messageRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "-=0.1")
       .to(buttonRef.current, .25, { opacity: 1, y: 0 })
       .play()
-  })
+      .eventCallback(`onComplete`, () => setFocusInputName())
+      return () => myTween.eventCallback('onComplete', null)
+  }, )
 
   return (
     <form className="contact-form" onSubmit={onSubmit} id="contacts" action={`/success-sent/`}
