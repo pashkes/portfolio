@@ -46,7 +46,9 @@
     z-index: 1;
     transition: opacity .3s ease-in-out;
 }
-
+.visible {
+    opacity: 1 !important;
+}
 .cube svg {
     width: inherit;
     height: inherit;
