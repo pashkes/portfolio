@@ -26,31 +26,21 @@ const ContactForm = ({ values, errors, isSubmitting, touched }) => {
   const [isFilledMessage, setFillMessage] = useState(false)
 
   useEffect(() => {
+    values.name.length ? setFillName(true) : setFillName(false)
+    values.email.length ? setFillEmail(true) : setFillEmail(false)
+    values.message.length ? setFillMessage(true) : setFillMessage(false)
+  }, [values.name, values.email, values.message])
+
+  useEffect(() => {
+    const inputName = nameRef.current.querySelector(`input`);
     myTween
       .to(nameRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "+=0.25")
       .to(emailRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "-=0.065")
       .to(messageRef.current, .25, { opacity: 1, scaleX: 1, transformOrigin: "0 0" }, "-=0.1")
       .to(buttonRef.current, .25, { opacity: 1, y: 0 })
       .play()
-
-    if (values.name.length > 0) {
-      setFillName(true)
-    } else {
-      setFillName(false)
-    }
-
-    if (values.email.length > 0) {
-      setFillEmail(true)
-    } else {
-      setFillEmail(false)
-    }
-
-    if (values.message.length > 0) {
-      setFillMessage(true)
-    } else {
-      setFillMessage(false)
-    }
-  })
+      .eventCallback(`onComplete`, () => inputName.focus())
+  }, [])
 
   return (
     <Form className="contact-form"
