@@ -5,6 +5,7 @@ import withLocation from "./with-location";
 import Pagination from "../pagination/pagination";
 import "./work.css";
 
+
 class Work extends PureComponent {
   constructor(props) {
     super(props);
@@ -20,12 +21,13 @@ class Work extends PureComponent {
 
   componentDidMount() {
     this._myTween
-      .from(this._title, 0.25, { autoAlpha: 0, y: -30 })
-      .from(this._subtitle, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this._skills, 0.25, { y: -30, autoAlpha: 0 }, "-=0.1")
-      .from(this._buttons, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
+      .from(this._title, 0.45, { autoAlpha: 0, y: -10 })
+      .from(this._subtitle, 0.25, { autoAlpha: 0, y: -10 }, "-=0.2")
+      .from(this._skills, 0.25, { y: -30, autoAlpha: 0 })
+      .from(this._buttons, 0.25, { autoAlpha: 0, y: -10 })
       .from(this._buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
-      .from(this._previewPhoto, 0.3, { opacity: 0 },"-=0.25")
+      .from(this._previewPhoto, 1, { opacity: 0, x: 70, scale: 0.9 }, "-=0.1")
+      .to(this._previewPhoto, 2, { opacity: 1, x: 0, scale: 1 })
       .play();
   }
 
