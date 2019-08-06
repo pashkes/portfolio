@@ -25,8 +25,8 @@ class Work extends PureComponent {
       .from(this._subtitle, 0.25, { autoAlpha: 0, y: -10 }, "-=0.2")
       .from(this._skills, 0.25, { y: -30, autoAlpha: 0 })
       .from(this._buttons, 0.25, { autoAlpha: 0, y: -10 })
-      .from(this._buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.1")
       .from(this._previewPhoto, 1, { opacity: 0, x: 70, scale: 0.9 }, "-=0.1")
+      .from(this._buttonsMobile, 0.25, { autoAlpha: 0, y: -30 }, "-=0.6")
       .to(this._previewPhoto, 2, { opacity: 1, x: 0, scale: 1 })
       .play();
   }
