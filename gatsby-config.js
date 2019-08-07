@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    // 'gatsby-plugin-use-dark-mode',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,7 +52,7 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -59,7 +60,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-layout`,
-    // 'gatsby-plugin-use-dark-mode',
 
     // 'gatsby-plugin-page-transitions',
     /*{
