@@ -77,7 +77,7 @@
 
 @media screen and (min-width: 1024px) {
     .wrapper {
-        background: repeating-linear-gradient(to right, #191F2F, #191F2F 1px, #101626 1px, #101626 24.9%);
+        background: repeating-linear-gradient(to right, var(--line-grid-color), var(--line-grid-color) 1px, var(--primary-color) 1px, var(--primary-color) 24.9%);
     }
 
     .layout {

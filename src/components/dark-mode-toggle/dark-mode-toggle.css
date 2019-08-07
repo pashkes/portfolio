@@ -1,0 +1,28 @@
+.mode {
+    display: inline-flex;
+    position: relative;
+}
+.mode__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    width: 22px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    z-index: 1;
+    cursor: pointer;
+    color: #ffe600;
+}
+
+.mode__btn--light {
+    left: 3px;
+}
+.mode__btn--dark {
+    right: 3px;
+}

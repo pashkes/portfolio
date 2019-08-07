@@ -19,7 +19,7 @@ const About = () => {
       .to(btnDownload.current, 0.25, { opacity: 1, y: 0 }, "-=0.1")
       .to(myPhoto.current, 0.35, { opacity: 1}, "-=0.1")
       .play()
-  })
+  }, [])
 
   return (
     <section className="about">

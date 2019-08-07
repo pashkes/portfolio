@@ -5,7 +5,12 @@
     list-style-type: none;
     z-index: 1;
 }
-
+.dark-mode .social {
+    --icon-fill: #fff;
+}
+.light-mode .social {
+    --icon-fill: #101626;
+}
 .social__link {
     display: flex;
     justify-content: center;
@@ -15,7 +20,7 @@
 .social__link svg {
     width: 22px;
     height: 22px;
-    fill: white;
+    fill: var(--icon-fill);
     transition: var(--base-transition);
 }
 

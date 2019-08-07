@@ -59,6 +59,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-layout`,
+    // 'gatsby-plugin-use-dark-mode',
+
     // 'gatsby-plugin-page-transitions',
     /*{
       resolve: "gatsby-plugin-transition-link",

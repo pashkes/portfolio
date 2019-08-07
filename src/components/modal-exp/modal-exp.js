@@ -21,7 +21,7 @@ const ModalExp = () => {
         dialogClass={`modal-exp`}
         titleId='exp-title'
         dialogStyle={{ display: `inline-flex`, width: `100%` }}
-        underlayStyle={{ display: `flex`, alignItems: `center`, justifyContent: `center` }}
+        underlayStyle={{ display: `flex`, alignItems: `center`,backgroundColor: `rgba(16, 22, 38, 0.9)`, justifyContent: `center` }}
       >
         <Modal deactivateModal={deactivateModal}/>
       </AriaModal>}
