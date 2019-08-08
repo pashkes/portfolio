@@ -2,6 +2,7 @@ import React from "react"
 
 import Pagination from "../components/pagination/pagination"
 import Work from "../components/work/work"
+import SEO from "../components/seo/seo"
 
 const WorkLayout = ({ pageContext }) => {
   const { group, index: indexPage, first, last, pageCount } = pageContext
@@ -10,6 +11,7 @@ const WorkLayout = ({ pageContext }) => {
 
   return (
     <div className="work-layout">
+      <SEO title={group[0].node.frontmatter.title} />
       <Work index={indexPage} {...group[0].node.frontmatter} />
       <Pagination
         previousUrl={previousUrl}
