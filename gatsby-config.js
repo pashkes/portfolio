@@ -14,6 +14,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    "gatsby-plugin-slug",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -43,6 +44,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
+
     // 'gatsby-plugin-svg-sprite',
     {
       resolve: "gatsby-plugin-react-svg",

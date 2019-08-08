@@ -92,8 +92,9 @@ const ValidationContactForm = withFormik({
       message: message || ``,
     }
   },
-  handleSubmit(values, { setError, setSubmitting }) {
+  handleSubmit(values, { setError, setSubmitting, setFieldTouched }) {
     setSubmitting(true)
+    setFieldTouched()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
