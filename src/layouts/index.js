@@ -33,7 +33,7 @@ const Layout = ({children, uri}) => (
               <div className='layout__social'>
                 <Social />
               </div>
-              {uri === `/contacts` && <ContactList />}
+              {uri === `/contacts` || uri === `/success-sent` && <ContactList />}
             </div>
           </div>
         </main>
