@@ -1,13 +1,13 @@
-.mode {
+.toggle {
     display: inline-flex;
     position: relative;
 }
-.mode__btn {
+.toggle-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     padding: 0;
     background-color: transparent;
     border: none;
@@ -15,21 +15,22 @@
     z-index: 1;
     cursor: pointer;
 }
-.mode__btn svg {
-    fill:  #575B67;
-}
-.mode__btn.is-active svg {
-    fill: var(--secondary-color);
+.toggle-icon  svg {
+    fill: #575B67;
 }
 
-.mode__btn--light {
-    left: 3px;
+.toggle.is-dark .toggle-icon.dark svg{
+    fill: var(--secondary-color);
 }
-.mode__btn--dark-mode {
-    right: 3px;
+.toggle.is-light .toggle-icon.light svg {
+    fill: var(--secondary-color);
 }
+.toggle-icon  svg {
+    fill: #575B67;
+}
+
 @media (min-width: 1200px) {
-    .mode__btn {
+    .toggle-icon {
         width: 32px;
         height: 32px;
     }

@@ -6,25 +6,15 @@ import IconLightMode from "./../../images/icons/ligh-mode.svg";
 import IconDarkMode from "./../../images/icons/dark-mode.svg";
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode();
+  console.log(darkMode.value)
   return (
     <div className='mode'>
-      <button
-        className={`mode__btn mode__btn--light ${
-          darkMode.value === false ? `is-active` : ``
-        }`}
-        type='button'
-        onClick={darkMode.disable}>
-        <IconLightMode />
-      </button>
-      <button
-        className={`mode__btn mode__btn--dark ${
-          darkMode.value === true ? `is-active` : ``
-        }`}
-        type='button'
-        onClick={darkMode.enable}>
-        <IconDarkMode />
-      </button>
+      <label className={`toggle ${darkMode.value ? `is-light` : `is-dark`}`}>
+        <input type="checkbox" className="invisible" onChange={darkMode.toggle} checked={darkMode.value}/>
+        <span className="toggle-icon dark"><IconLightMode /></span>
+        <span className="toggle-icon light"><IconDarkMode /></span>
+      </label>
     </div>
   );
 };

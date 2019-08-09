@@ -23,6 +23,7 @@
 .menu__link.is-active {
     color: var(--secondary-color);
 }
+
 .menu__link:not(.is-active):focus {
     outline: none;
 }
@@ -65,10 +66,12 @@
     .menu__link.is-active:hover {
         transform: translateX(0);
     }
+
     .menu__link.is-active:focus::before,
     .menu__link.is-active:focus::after {
         display: none;
     }
+
     .menu__link.is-active::before,
     .menu__link.is-active::after {
         opacity: 0;
