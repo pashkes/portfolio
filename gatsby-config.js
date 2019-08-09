@@ -8,16 +8,6 @@ module.exports = {
     'gatsby-plugin-use-dark-mode',
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    "gatsby-plugin-slug",
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Portfolio by Pavel Tarasenko`,
@@ -41,11 +31,10 @@ module.exports = {
         display: 'swap'
       }
     },
+    "gatsby-plugin-slug",
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
-
-    // 'gatsby-plugin-svg-sprite',
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -54,7 +43,6 @@ module.exports = {
         }
       }
     },
-    // `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,14 +50,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-layout`,
-
-    // 'gatsby-plugin-page-transitions',
-    /*{
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: require.resolve(`./src/layouts/index.js`)
-      }
-    }*/
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
   ],

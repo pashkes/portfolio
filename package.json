@@ -1,12 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Portfolio by Pavel Tarasenko",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pavel Tarasenko <pashkes@gmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "formik": "^1.5.8",
     "gatsby": "^2.13.39",
@@ -16,18 +15,14 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
-    "gatsby-plugin-netlify": "^2.1.3",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-page-transitions": "^1.0.8",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-react-svg": "^2.1.1",
-    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-plugin-slug": "^1.0.1",
     "gatsby-plugin-svg-sprite": "^2.0.1",
     "gatsby-plugin-sw": "^1.0.1",
-    "gatsby-plugin-transition-link": "^1.12.4",
-    "gatsby-plugin-transitions": "^2.1.5",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-remark": "^2.6.10",
@@ -38,13 +33,8 @@
     "query-string": "^6.8.2",
     "react": "^16.8.6",
     "react-aria-modal": "^4.0.0",
-    "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-modal": "^3.9.1",
-    "react-spring": "^8.0.27",
-    "react-transition-group": "^1.2.1",
-    "reactjs-popup": "^1.4.2",
     "recompose": "^0.30.0",
     "use-dark-mode": "^2.3.1",
     "yup": "^0.27.0"
@@ -52,8 +42,7 @@
   "devDependencies": {
     "eslint-config-react-app": "^4.0.1",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "prettier": "^1.18.2",
-    "simple-react-validator": "^1.2.2"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby"
@@ -69,9 +58,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/pashkes/portfolio"
   }
 }
