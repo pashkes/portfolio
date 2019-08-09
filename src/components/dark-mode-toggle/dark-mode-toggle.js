@@ -6,7 +6,7 @@ import IconLightMode from "./../../images/icons/ligh-mode.svg";
 import IconDarkMode from "./../../images/icons/dark-mode.svg";
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(true);
+  const darkMode = useDarkMode(false);
   return (
     <div className='mode'>
       <button
@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
           darkMode.value === false ? `is-active` : ``
         }`}
         type='button'
-        onClick={darkMode.disable}>
+        onClick={darkMode.toggle}>
         <IconLightMode />
       </button>
       <button
@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
           darkMode.value === true ? `is-active` : ``
         }`}
         type='button'
-        onClick={darkMode.enable}>
+        onClick={darkMode.toggle}>
         <IconDarkMode />
       </button>
     </div>
