@@ -4,14 +4,17 @@ import AcrossIcon from "../../images/icons/across.svg";
 import {TimelineLite} from "gsap";
 
 const Modal = ({deactivateModal}) => {
-  const modal = useRef(null);
-  let myTween = new TimelineLite({paused: true});
+  const modalDocumentRef = useRef(null);
+  let tl = new TimelineLite({paused: true});
 
   useEffect(() => {
-    myTween.to(modal.current, 0.35, {opacity: 1}).play();
+    tl.to(modalDocumentRef.current, 0.35, {opacity: 1}).play();
   });
   return (
-    <div ref={modal} className={`modal-exp__wrapper fade`} role='document'>
+    <div
+      ref={modalDocumentRef}
+      className={`modal-exp__wrapper fade`}
+      role='document'>
       <button
         className='modal-exp__close'
         id='close-modal'

@@ -9,7 +9,7 @@
     position: absolute;
     right: -16px;
     left: -16px;
-    bottom: 17px;
+    bottom: 6px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 6px;
+    padding-top: 12px;
 }
 
 .header__logo {

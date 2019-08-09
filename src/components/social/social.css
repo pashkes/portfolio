@@ -28,3 +28,13 @@
 .social__link:focus svg{
     fill: var(--secondary-color)
 }
+@media (prefers-color-scheme: dark) {
+    .dark .social {
+        --icon-fill: #fff;
+    }
+}
+@media (prefers-color-scheme: light) {
+    .light .social {
+        --icon-fill: #101626;
+    }
+}

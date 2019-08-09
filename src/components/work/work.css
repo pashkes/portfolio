@@ -1,5 +1,6 @@
 .work {
     display: grid;
+    padding-top: 20px;
 }
 
 .work__info {

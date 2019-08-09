@@ -11,10 +11,10 @@ const ERROR = `Something went wrong, check filled data`;
 
 const encode = (data) => {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .map((key) => encodeURIComponent(key) + `=` + encodeURIComponent(data[key]))
+    .join(`&`);
 };
-const ContactForm = ({values, errors, isSubmitting, touched}) => {
+const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
   let nameRef = useRef(null);
   let emailRef = useRef(null);
   let messageRef = useRef(null);
@@ -28,7 +28,7 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
     values.name.length ? setFillName(true) : setFillName(false);
     values.email.length ? setFillEmail(true) : setFillEmail(false);
     values.message.length ? setFillMessage(true) : setFillMessage(false);
-  }, [values.name, values.email, values.message]);
+  }, [values]);
 
   useEffect(() => {
     const inputName = nameRef.current.querySelector(`input`);
@@ -78,14 +78,19 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
             } ${errors.name && touched.name ? `error` : ``}`}
             ref={nameRef}>
             <Field
-              className={`form-control__field`}
+              className='form-control__field'
               name='name'
               id='contacts-name'
+              aria-required='true'
+              aria-labelledby='name-error-message'
             />
             <label className='form-control__label' htmlFor='contacts-name'>
               Name
             </label>
             <ErrorMessage
+              role='alert'
+              aria-live='assertive'
+              id='name-error-message'
               className='form-control__error'
               component='span'
               name='name'
@@ -103,11 +108,16 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
               id='contacts-email'
               pattern={`[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`}
               inputMode='email'
+              aria-required='true'
+              aria-labelledby='email-error-message'
             />
             <label className='form-control__label' htmlFor='contacts-email'>
               E-mail
             </label>
             <ErrorMessage
+              role='alert'
+              aria-live='assertive'
+              id='email-error-message'
               className='form-control__error'
               component='span'
               name='email'

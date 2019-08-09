@@ -7,27 +7,26 @@ import ModalExp from "../modal-exp/modal-exp";
 import MyPhoto from "../my-photo/my-photo";
 
 const About = () => {
-  const title = useRef(null);
-  const subtitle = useRef(null);
-  const btnDownload = useRef(null);
-  const myPhoto = useRef(null);
-  const myTween = new TimelineLite({paused: true});
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const btnDownloadRef = useRef(null);
+  const myPhotoRef = useRef(null);
+  const tl = new TimelineLite({paused: true});
   useEffect(() => {
-    myTween
-      .to(title.current, 0.45, {opacity: 1, y: 0})
-      .to(subtitle.current, 0.25, {opacity: 1, y: 0}, "-=0.1")
-      .to(btnDownload.current, 0.25, {opacity: 1, y: 0}, "-=0.1")
-      .to(myPhoto.current, 0.35, {opacity: 1}, "-=0.1")
+    tl.to(titleRef.current, 0.45, {opacity: 1, y: 0})
+      .to(subtitleRef.current, 0.25, {opacity: 1, y: 0}, "-=0.1")
+      .to(btnDownloadRef.current, 0.25, {opacity: 1, y: 0}, "-=0.1")
+      .to(myPhotoRef.current, 0.35, {opacity: 1}, "-=0.1")
       .play();
   }, []);
 
   return (
     <section className='about'>
       <div className='about__body'>
-        <h1 className='h1 slide-down' ref={title}>
+        <h2 className='h1 slide-down' ref={titleRef}>
           Hi, I&rsquo;m Pavel Tarasenko
-        </h1>
-        <p className='about__subtitle slide-down' ref={subtitle}>
+        </h2>
+        <p className='about__subtitle slide-down' ref={subtitleRef}>
           I&rsquo;m really like creating user interfaces which intuitive,
           convenient and beautiful. Of&nbsp;course, I&rsquo;m paying attention
           to&nbsp;performance and accessibility that&nbsp;I consider highly
@@ -35,16 +34,16 @@ const About = () => {
           <ModalExp />
           nowadays.
         </p>
-        <div className={`slide-down`} ref={btnDownload}>
+        <div className={`slide-down`} ref={btnDownloadRef}>
           <a href='/' className='button-download'>
-            <DownloadIcon />
+            <DownloadIcon aria-hidden='true' />
             <span className='button-download__text'>Download CV</span>
             <span className='button-download__info'>(pdf 1.2Mb)</span>
           </a>
         </div>
       </div>
       <div className='about__col'>
-        <div className={`fade`} ref={myPhoto}>
+        <div className={`fade`} ref={myPhotoRef}>
           <MyPhoto />
         </div>
         <a href='/' className='button-download'>

@@ -1,3 +1,7 @@
+.no-js .toggle {
+    display: none;
+}
+
 .toggle {
     display: inline-flex;
     position: relative;
@@ -27,6 +31,19 @@
 
 .toggle-icon svg {
     fill: #575B67;
+    transition: var(--base-transition);
+}
+
+@media (prefers-color-scheme: dark) {
+    .light .toggle-icon.light svg {
+        fill: var(--secondary-color);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .dark .toggle-icon.dark svg {
+        fill: var(--secondary-color);
+    }
 }
 
 @media (min-width: 1200px) {

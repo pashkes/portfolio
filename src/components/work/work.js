@@ -36,9 +36,9 @@ const Work = ({
   return (
     <section className='work'>
       <div className='work__info'>
-        <h1 className='work__title h1 slide-down' ref={titleRef}>
+        <h2 className='work__title h1 slide-down' ref={titleRef}>
           {title}
-        </h1>
+        </h2>
         <p
           className='work__subtitle slide-down'
           dangerouslySetInnerHTML={{__html: description}}

@@ -11,9 +11,9 @@ const Contacts = ({child}) => {
   });
   return (
     <section className='contacts'>
-      <h1 ref={titleRef} className='h1 contacts__title slide-down'>
+      <h2 ref={titleRef} className='h1 contacts__title slide-down'>
         Want to work with me?
-      </h1>
+      </h2>
       {child}
     </section>
   );

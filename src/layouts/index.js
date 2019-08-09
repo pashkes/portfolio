@@ -20,7 +20,9 @@ const Layout = ({children, uri}) => (
               <div className='layout__col layout__col--nav'>
                 <Menu />
               </div>
-              <div className='layout__col'>{children}</div>
+              <div className='layout__col' aria-live='polite' role='banner'>
+                {children}
+              </div>
             </div>
             <div
               className={`layout__footer ${

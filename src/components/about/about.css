@@ -1,5 +1,6 @@
 .about {
     display: grid;
+    padding-top: 20px;
 }
 
 .about__photo {
@@ -22,7 +23,9 @@
         grid-column-gap: 54px;
         align-items: center;
         margin-bottom: 0;
+        padding-top: 0;
     }
+
     .about__col .button-download {
         display: none;
     }

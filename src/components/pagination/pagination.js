@@ -29,6 +29,15 @@ const NavLink = ({title, test, url, className, children, ...attrs}) => {
     );
   }
 };
+
+NavLink.propTypes = {
+  title: PropTypes.string.isRequired,
+  test: PropTypes.bool.isRequired,
+  url: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
 const Pagination = ({
   pageOfAmount,
   current,
@@ -47,7 +56,7 @@ const Pagination = ({
             className='pagination__arrow--previous'
             url={previousUrl}
             title={`Go to Previous Page`}>
-            <IconArrowLeft width='33' height='8' />
+            <IconArrowLeft width='33' height='8' aria-hidden='true' />
           </NavLink>
         </li>
         {pagesOfNumber.map((item) => (
@@ -69,7 +78,7 @@ const Pagination = ({
             test={last}
             url={nextUrl}
             title={`Go to Next Page`}>
-            <IconArrowRight width='33' height='8' />
+            <IconArrowRight width='33' height='8' aria-hidden='true' />
           </NavLink>
         </li>
       </ul>
@@ -81,9 +90,9 @@ Pagination.propTypes = {
   pageOfAmount: PropTypes.number.isRequired,
   current: PropTypes.number.isRequired,
   first: PropTypes.bool.isRequired,
-  previousUrl: PropTypes.string.isRequired,
   last: PropTypes.bool.isRequired,
-  nextUrl: PropTypes.string.isRequired,
+  previousUrl: PropTypes.string,
+  nextUrl: PropTypes.string,
 };
 
 export default Pagination;
