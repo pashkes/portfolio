@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react"
-import { TimelineLite } from "gsap"
+import React, {useEffect, useRef} from "react";
+import {TimelineLite} from "gsap";
 
-import "./skills.css"
+import "./skills.css";
 
 const skills = [
   `TypeScript`,
@@ -13,7 +13,7 @@ const skills = [
   `Enzyme`,
   `Jest`,
   `pug`,
-]
+];
 
 const courses = [
   {
@@ -36,55 +36,71 @@ const courses = [
     name: `HTML and CSS, Level&nbsp;1`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/18/164879.pdf`,
   },
-]
+];
 
 const Skills = () => {
-  const _courses = useRef([])
-  const _skills = useRef([])
-  const text = useRef(null)
-  const myTween = new TimelineLite({ paused: true })
+  const _courses = useRef([]);
+  const _skills = useRef([]);
+  const text = useRef(null);
+  const myTween = new TimelineLite({paused: true});
 
   useEffect(() => {
     myTween
-      .to(text.current, 0.6, { opacity: 1, y: 0 })
-      .staggerTo(_courses.current, 0.25, { x: 0, opacity: 1 }, 0.1, `-=.3`)
-      .staggerTo(_skills.current, 0.25, { x: 0, opacity: 1 }, 0.1, `-=.4`)
-      .play()
+      .to(text.current, 0.6, {opacity: 1, y: 0})
+      .staggerTo(_courses.current, 0.25, {x: 0, opacity: 1}, 0.1, `-=.3`)
+      .staggerTo(_skills.current, 0.25, {x: 0, opacity: 1}, 0.1, `-=.4`)
+      .play();
     return () => myTween.clear();
-  })
+  });
 
   return (
-    <section className="skills">
-      <h1 className="invisible">Skills</h1>
-      <div className="skills__col">
-        <p className="skills__subtitle slide-down" ref={text}>Skills can be&nbsp;taught, personality is&nbsp;inherent.
-          I&nbsp;prefer
-          to&nbsp;keep
-          learning, continue challenging myself, and do&nbsp;interesting things that matter.</p>
-        <ul className="skills__courses">
-          {
-            courses.map(({ name, cert }, index) => (
-              <li key={name} className={`slide-right`} ref={course => _courses.current[index] = course}>
-                <p className="skills__name" dangerouslySetInnerHTML={{ __html: name }}/>
-                <p className="skills__info">HTML Academy&nbsp;/ <a href={cert} className="skills__cert-link link"
-                                                                   target={`blank`}
-                                                                   rel="noopener noreferrer">certificate</a></p>
-              </li>
-            ))
-          }
+    <section className='skills'>
+      <h1 className='invisible'>Skills</h1>
+      <div className='skills__col'>
+        <p className='skills__subtitle slide-down' ref={text}>
+          Skills can be&nbsp;taught, personality is&nbsp;inherent. I&nbsp;prefer
+          to&nbsp;keep learning, continue challenging myself, and
+          do&nbsp;interesting things that matter.
+        </p>
+        <ul className='skills__courses'>
+          {courses.map(({name, cert}, index) => (
+            <li
+              key={name}
+              className={`slide-right`}
+              ref={(course) => (_courses.current[index] = course)}>
+              <p
+                className='skills__name'
+                dangerouslySetInnerHTML={{__html: name}}
+              />
+              <p className='skills__info'>
+                HTML Academy&nbsp;/{" "}
+                <a
+                  href={cert}
+                  className='skills__cert-link link'
+                  target={`blank`}
+                  rel='noopener noreferrer'>
+                  certificate
+                </a>
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
-      <div className="skills__col">
-        <ul className="skills__list">
-          {
-            skills.map((item, index) => <li className={`slide-right`} ref={skill => _skills.current[index] = skill} key={item}>{item}</li>)
-          }
+      <div className='skills__col'>
+        <ul className='skills__list'>
+          {skills.map((item, index) => (
+            <li
+              className={`slide-right`}
+              ref={(skill) => (_skills.current[index] = skill)}
+              key={item}>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
     </section>
-  )
-
-}
+  );
+};
 /*
 class Skills extends PureComponent {
   constructor(props) {
@@ -137,4 +153,4 @@ class Skills extends PureComponent {
 }
 */
 
-export default Skills
+export default Skills;

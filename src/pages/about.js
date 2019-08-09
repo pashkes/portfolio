@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 
-import SEO from "../components/seo/seo"
-import About from "../components/about/about"
+import SEO from "../components/seo/seo";
+import About from "../components/about/about";
 
 const AboutPage = () => {
   return (
     <>
-      <SEO title="About"/>
-      <About/>
+      <SEO title='About' />
+      <About />
     </>
   );
 };
 
-export default AboutPage
+export default AboutPage;

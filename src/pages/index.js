@@ -1,12 +1,12 @@
-import React from "react"
+import React from "react";
 
-import SEO from "../components/seo/seo"
-import Promo from "../components/promo/promo"
+import SEO from "../components/seo/seo";
+import Promo from "../components/promo/promo";
 
 const IndexPage = () => (
   <>
-    <SEO description={`Portfolio`} title="Home"/>
-    <Promo/>
+    <SEO description={`Portfolio`} title='Home' />
+    <Promo />
   </>
 );
 

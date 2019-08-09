@@ -1,16 +1,30 @@
-import React from 'react';
-import useDarkMode from 'use-dark-mode';
-import Toggle from "../toggle/toggle"
+import React from "react";
+import useDarkMode from "use-dark-mode";
 
-import "./dark-mode-toggle.css"
+import "./dark-mode-toggle.css";
+import IconLightMode from "./../../images/icons/ligh-mode.svg";
+import IconDarkMode from "./../../images/icons/dark-mode.svg";
 
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(true);
   return (
-    <div className="mode">
-      <button className="mode__btn mode__btn--light" type="button" onClick={darkMode.disable}>☀</button>
-      <Toggle isActive={darkMode.value} onChange={darkMode.toggle} aria-label="Switch between Dark and Light mode" />
-      <button className="mode__btn mode__btn--dark" type="button" onClick={darkMode.enable}>☾</button>
+    <div className='mode'>
+      <button
+        className={`mode__btn mode__btn--light ${
+          darkMode.value === false ? `is-active` : ``
+        }`}
+        type='button'
+        onClick={darkMode.disable}>
+        <IconLightMode />
+      </button>
+      <button
+        className={`mode__btn mode__btn--dark ${
+          darkMode.value === true ? `is-active` : ``
+        }`}
+        type='button'
+        onClick={darkMode.enable}>
+        <IconDarkMode />
+      </button>
     </div>
   );
 };

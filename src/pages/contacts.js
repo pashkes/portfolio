@@ -2,12 +2,12 @@ import React from "react";
 
 import SEO from "../components/seo/seo";
 import Contacts from "../components/contacts/contacts";
-import ContactForm from "../components/contact-form/contact-form"
+import ContactForm from "../components/contact-form/contact-form";
 
 const ContactsPage = () => (
   <>
-    <SEO description={`Portfolio`} title="Contact"/>
-    <Contacts child={<ContactForm />}/>
+    <SEO description={`Portfolio`} title='Contact' />
+    <Contacts child={<ContactForm />} />
   </>
 );
 

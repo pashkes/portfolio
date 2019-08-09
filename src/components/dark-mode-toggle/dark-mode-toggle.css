@@ -3,26 +3,34 @@
     position: relative;
 }
 .mode__btn {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 0;
-    bottom: 0;
-    width: 22px;
+    width: 44px;
+    height: 44px;
     padding: 0;
     background-color: transparent;
     border: none;
     font-size: 18px;
-    outline: none;
     z-index: 1;
     cursor: pointer;
-    color: #ffe600;
+}
+.mode__btn svg {
+    fill:  #575B67;
+}
+.mode__btn.is-active svg {
+    fill: var(--secondary-color);
 }
 
 .mode__btn--light {
     left: 3px;
 }
-.mode__btn--dark {
+.mode__btn--dark-mode {
     right: 3px;
+}
+@media (min-width: 1200px) {
+    .mode__btn {
+        width: 32px;
+        height: 32px;
+    }
 }
