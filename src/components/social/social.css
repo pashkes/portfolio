@@ -5,10 +5,10 @@
     list-style-type: none;
     z-index: 1;
 }
-.dark-mode .social {
+.dark .social {
     --icon-fill: #fff;
 }
-.light-mode .social {
+.light .social {
     --icon-fill: #101626;
 }
 .social__link {

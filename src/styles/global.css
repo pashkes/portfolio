@@ -6,7 +6,7 @@
     --header-min-height: 62px
 }
 
-.light-mode {
+.light {
     --primary-color: #ECF1F3;
     --secondary-color: #89C891;
     --grey-color: rgba(255, 255, 255, 0.3);
@@ -14,7 +14,7 @@
     --color-text: #101626;
 }
 
-.dark-mode {
+.dark {
     -webkit-font-smoothing: antialiased;
     --primary-color: #101626;
     --secondary-color: #92D79A;
@@ -174,11 +174,11 @@ p {
     cursor: pointer;
 }
 
-.light-mode .button {
+.light .button {
     border-color: var(--color-text)
 }
 
-.light-mode .button:hover {
+.light .button:hover {
     border-color: var(--secondary-color)
 }
 
@@ -311,11 +311,11 @@ p {
     transform: scale(1);
 }
 
-.light-mode .form-control__field {
+.light .form-control__field {
     --border-color: var(--color-text);
 }
 
-.dark-mode .form-control__field {
+.dark .form-control__field {
     --border-color: rgba(255, 255, 255, 1);
 }
 
