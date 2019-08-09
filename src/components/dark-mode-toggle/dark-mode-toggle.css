@@ -2,6 +2,7 @@
     display: inline-flex;
     position: relative;
 }
+
 .toggle-icon {
     display: flex;
     align-items: center;
@@ -15,17 +16,20 @@
     z-index: 1;
     cursor: pointer;
 }
-.toggle-icon  svg {
+
+.toggle-icon svg {
     fill: #575B67;
 }
 
-.toggle.is-dark .toggle-icon.dark svg{
-    fill: var(--secondary-color);
-}
 .toggle.is-light .toggle-icon.light svg {
     fill: var(--secondary-color);
 }
-.toggle-icon  svg {
+
+.toggle.is-dark .toggle-icon.dark svg {
+    fill: var(--secondary-color);
+}
+
+.toggle-icon svg {
     fill: #575B67;
 }
 

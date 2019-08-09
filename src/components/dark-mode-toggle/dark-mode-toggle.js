@@ -10,10 +10,10 @@ const DarkModeToggle = () => {
   console.log(darkMode.value)
   return (
     <div className='mode'>
-      <label className={`toggle ${darkMode.value ? `is-light` : `is-dark`}`}>
+      <label className={`toggle ${darkMode.value ? `is-dark` : `is-light`}`}>
         <input type="checkbox" className="invisible" onChange={darkMode.toggle} checked={darkMode.value}/>
-        <span className="toggle-icon dark"><IconLightMode /></span>
-        <span className="toggle-icon light"><IconDarkMode /></span>
+        <span className="toggle-icon light"><IconLightMode /></span>
+        <span className="toggle-icon dark"><IconDarkMode /></span>
       </label>
     </div>
   );
