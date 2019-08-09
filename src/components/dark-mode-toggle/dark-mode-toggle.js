@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
           darkMode.value === false ? `is-active` : ``
         }`}
         type='button'
-        onClick={darkMode.toggle}>
+        onClick={darkMode.disable}>
         <IconLightMode />
       </button>
       <button
@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
           darkMode.value === true ? `is-active` : ``
         }`}
         type='button'
-        onClick={darkMode.toggle}>
+        onClick={darkMode.enable}>
         <IconDarkMode />
       </button>
     </div>
