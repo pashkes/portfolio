@@ -18,10 +18,10 @@ const DarkModeToggle = () => {
             aria-label='Switch between Dark and Light mode'
           />{" "}
           <span className='toggle-icon light'>
-            <IconLightMode aria-hidden='true' />
+            <IconLightMode aria-hidden='true' width={22} height={22} />
           </span>
           <span className='toggle-icon dark'>
-            <IconDarkMode aria-hidden='true' />
+            <IconDarkMode aria-hidden='true' width={18} height={18} />
           </span>
         </label>
       )}

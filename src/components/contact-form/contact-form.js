@@ -1,60 +1,63 @@
-import React, {useEffect, useRef, useState} from "react";
-import {withFormik, Form, Field, ErrorMessage} from "formik";
-import * as Yup from "yup";
-import {navigate} from "gatsby";
+import React, { useEffect, useRef, useState } from "react"
+import { withFormik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
+import { navigate } from "gatsby"
 
-import "./contact-form.css";
+import "./contact-form.css"
 
-import {TimelineLite} from "gsap";
+import { TimelineLite } from "gsap"
 
-const ERROR = `Something went wrong, check filled data`;
+const ERROR = `Something went wrong, check filled data`
 
 const encode = (data) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + `=` + encodeURIComponent(data[key]))
-    .join(`&`);
-};
-const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
-  let nameRef = useRef(null);
-  let emailRef = useRef(null);
-  let messageRef = useRef(null);
-  let buttonRef = useRef(null);
-  const myTween = new TimelineLite({paused: true});
-  const [isFilledName, setFillName] = useState(false);
-  const [isFilledEmail, setFillEmail] = useState(false);
-  const [isFilledMessage, setFillMessage] = useState(false);
+    .join(`&`)
+}
+const ContactForm = ({ values, errors, isSubmitting, touched }) => {
+  let nameRef = useRef(null)
+  let emailRef = useRef(null)
+  let messageRef = useRef(null)
+  let buttonRef = useRef(null)
+  const myTween = new TimelineLite({ paused: true })
+  const [isFilledName, setFillName] = useState(false)
+  const [isFilledEmail, setFillEmail] = useState(false)
+  const [isFilledMessage, setFillMessage] = useState(false)
 
   useEffect(() => {
-    values.name.length ? setFillName(true) : setFillName(false);
-    values.email.length ? setFillEmail(true) : setFillEmail(false);
-    values.message.length ? setFillMessage(true) : setFillMessage(false);
-  }, [values]);
+    values.name.length ? setFillName(true) : setFillName(false)
+    values.email.length ? setFillEmail(true) : setFillEmail(false)
+    values.message.length ? setFillMessage(true) : setFillMessage(false)
+    localStorage.setItem(`email`, values.email)
+    localStorage.setItem(`name`, values.name)
+    localStorage.setItem(`message`, values.message)
+  }, [values])
 
   useEffect(() => {
-    const inputName = nameRef.current.querySelector(`input`);
+    const inputName = nameRef.current.querySelector(`input`)
     myTween
       .to(
         nameRef.current,
         0.25,
-        {opacity: 1, scaleX: 1, transformOrigin: "0 0"},
+        { opacity: 1, scaleX: 1, transformOrigin: "0 0" },
         "+=0.25",
       )
       .to(
         emailRef.current,
         0.25,
-        {opacity: 1, scaleX: 1, transformOrigin: "0 0"},
+        { opacity: 1, scaleX: 1, transformOrigin: "0 0" },
         "-=0.065",
       )
       .to(
         messageRef.current,
         0.25,
-        {opacity: 1, scaleX: 1, transformOrigin: "0 0"},
+        { opacity: 1, scaleX: 1, transformOrigin: "0 0" },
         "-=0.1",
       )
-      .to(buttonRef.current, 0.25, {opacity: 1, y: 0})
+      .to(buttonRef.current, 0.25, { opacity: 1, y: 0 })
       .play()
-      .eventCallback(`onComplete`, () => inputName.focus());
-  }, []);
+      .eventCallback(`onComplete`, () => inputName.focus())
+  }, [])
 
   return (
     <Form
@@ -63,10 +66,10 @@ const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
       name='contact'
       method='POST'
       data-netlify='true'>
-      <input type='hidden' name='form-name' value='contact' />
+      <input type='hidden' name='form-name' value='contact'/>
       <p hidden>
         <label>
-          Don’t fill this out: <input name='bot-field' />
+          Don’t fill this out: <input name='bot-field'/>
         </label>
       </p>
 
@@ -75,7 +78,7 @@ const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
           <div
             className={`form-control scale-to-right ${
               isFilledName ? `filled` : ``
-            } ${errors.name && touched.name ? `error` : ``}`}
+              } ${errors.name && touched.name ? `error` : ``}`}
             ref={nameRef}>
             <Field
               className='form-control__field'
@@ -99,7 +102,7 @@ const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
           <div
             className={`form-control scale-to-right ${
               isFilledEmail ? `filled` : ``
-            } ${errors.email && touched.email ? `error` : ``}`}
+              } ${errors.email && touched.email ? `error` : ``}`}
             ref={emailRef}>
             <Field
               type='email'
@@ -127,7 +130,7 @@ const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
         <div
           className={`form-control scale-to-right ${
             isFilledMessage ? `filled` : ``
-          } ${errors.message && touched.message ? `error` : ``}`}
+            } ${errors.message && touched.message ? `error` : ``}`}
           ref={messageRef}>
           <Field
             className={`form-control__field`}
@@ -142,38 +145,42 @@ const ContactForm = ({values, errors, isSubmitting, touched, submitCount}) => {
       <button
         ref={buttonRef}
         className={`contact-form__submit button slide-down ${isSubmitting &&
-          `button--disabled`}`}
+        `button--disabled`}`}
         disabled={isSubmitting}
         type='submit'>
         {isSubmitting ? `Sending...` : `Get in touch`}
       </button>
     </Form>
-  );
-};
+  )
+}
 const ValidationContactForm = withFormik({
-  mapPropsToValues({email, name, message}) {
+  mapPropsToValues({ email, name, message }) {
+    const hasLocalStorage = typeof localStorage !== "undefined"
     return {
-      email: email || ``,
-      name: name || ``,
-      message: message || ``,
-    };
+      email: email || (hasLocalStorage && localStorage.getItem(`email`)) || ``,
+      name: name || (hasLocalStorage && localStorage.getItem(`name`)) || ``,
+      message: message || (hasLocalStorage && localStorage.getItem(`message`)) || ``,
+    }
   },
-  handleSubmit(values, {setError, setSubmitting, setFieldTouched}) {
-    setSubmitting(true);
-    setFieldTouched();
+  handleSubmit(values, { setError, setSubmitting, setFieldTouched }) {
+    setSubmitting(true)
+    setFieldTouched()
     fetch("/", {
       method: "POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: encode({"form-name": "contact", ...values}),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
     })
       .then(() => {
-        setSubmitting(false);
-        navigate("/success-sent/");
+        setSubmitting(false)
+        navigate("/success-sent/")
+        localStorage.removeItem(`email`)
+        localStorage.removeItem(`name`)
+        localStorage.removeItem(`message`)
       })
       .catch(() => {
-        setSubmitting(false);
-        setError(ERROR);
-      });
+        setSubmitting(false)
+        setError(ERROR)
+      })
   },
   validationSchema: Yup.object().shape({
     name: Yup.string()
@@ -183,6 +190,6 @@ const ValidationContactForm = withFormik({
       .email(`Please enter a valid email address`)
       .required(`Email is a required field`),
   }),
-})(ContactForm);
+})(ContactForm)
 
-export default ValidationContactForm;
+export default ValidationContactForm

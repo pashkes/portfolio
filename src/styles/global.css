@@ -5,7 +5,8 @@
     --header-min-height: 62px
 }
 
-.light {
+.light,
+body {
     -webkit-font-smoothing: antialiased;
     --primary-color: #ECF1F3;
     --secondary-color: #89C891;
@@ -14,7 +15,8 @@
     --color-text: #101626;
 }
 
-.dark {
+.dark,
+body {
     -webkit-font-smoothing: antialiased;
     --primary-color: #101626;
     --secondary-color: #92D79A;
@@ -24,7 +26,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .dark {
+    .dark,
+    body {
         -webkit-font-smoothing: antialiased;
         --primary-color: #101626;
         --secondary-color: #92D79A;
@@ -35,7 +38,8 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .light {
+    .light,
+    body {
         --primary-color: #ECF1F3;
         --secondary-color: #89C891;
         --grey-color: rgba(255, 255, 255, 0.3);
@@ -63,7 +67,7 @@ main {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: var(--color-text);
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     transition: background-color 5000s ease-in-out 0s;
 }
