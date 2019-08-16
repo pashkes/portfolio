@@ -6,9 +6,9 @@ const MyPhoto = () => {
   const data = useStaticQuery(schemaForMyPhoto);
   return (
     <Img
-      className='about__photo'
+      className="about__photo"
       fluid={data.file.childImageSharp.fluid}
-      alt='Pavel Tarasenko'
+      alt="Pavel Tarasenko"
     />
   );
 };
@@ -24,4 +24,5 @@ const schemaForMyPhoto = graphql`
     }
   }
 `;
+
 export default MyPhoto;

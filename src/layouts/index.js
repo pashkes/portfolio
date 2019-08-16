@@ -11,16 +11,16 @@ import AnimationCubes from "./animation-cubes";
 const Layout = ({children, uri}) => (
   <div className={`page-wrapper`}>
     <AnimationCubes />
-    <div className='container'>
-      <div className='wrapper'>
+    <div className="container">
+      <div className="wrapper">
         <Header />
         <main>
-          <div className='layout'>
-            <div className='layout__row'>
-              <div className='layout__col layout__col--nav'>
+          <div className="layout">
+            <div className="layout__row">
+              <div className="layout__col layout__col--nav">
                 <Menu />
               </div>
-              <div className='layout__col' aria-live='polite' role='banner'>
+              <div className="layout__col" aria-live="polite" role="banner">
                 {children}
               </div>
             </div>
@@ -30,10 +30,12 @@ const Layout = ({children, uri}) => (
                   ? `layout__footer--page-contact`
                   : ``
               }`}>
-              <div className='layout__social'>
+              <div className="layout__social">
                 <Social />
               </div>
-              {uri === `/contacts` || uri === `/success-sent` ? <ContactList /> : null}
+              {uri === `/contacts` || uri === `/success-sent` ? (
+                <ContactList />
+              ) : null}
             </div>
           </div>
         </main>
@@ -44,6 +46,7 @@ const Layout = ({children, uri}) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  uri: PropTypes.string.isRequired,
 };
 
 export default Layout;

@@ -6,20 +6,21 @@
 
 // You can delete this file if you're not using it
 
-const createPaginatedPages = require("gatsby-paginate")
+const createPaginatedPages = require("gatsby-paginate");
 
-exports.createPages = ({ graphql, actions: { createPage } }) => {
+exports.createPages = ({graphql, actions: {createPage}}) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        works: allMarkdownRemark(sort: {fields: [frontmatter___title], order: DESC}) {
+        works: allMarkdownRemark(
+          sort: {fields: [frontmatter___title], order: DESC}
+        ) {
           edges {
             node {
               id
               frontmatter {
                 title
                 skills
-                query
                 preview
                 githubLink
                 description
@@ -32,7 +33,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       createPaginatedPages({
         edges: result.data.works.edges,
         createPage: createPage,
@@ -41,8 +42,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         pathPrefix: "work",
         buildPath: (index, pathPrefix) =>
           index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
-      })
-      resolve()
-    })
-  })
-}
+      });
+      resolve();
+    });
+  });
+};

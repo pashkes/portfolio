@@ -5,7 +5,7 @@ import Skills from "../components/skills/skills";
 
 const SkillsPage = () => (
   <>
-    <SEO title='Skills' />
+    <SEO title="Skills" />
     <Skills />
   </>
 );

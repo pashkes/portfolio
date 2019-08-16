@@ -16,7 +16,7 @@ const SuccessPage = () => {
   });
   return (
     <>
-      <SEO description={`Portfolio`} title='The form has been success sent' />
+      <SEO description={`Portfolio`} title="The form has been success sent" />
       <Contacts
         child={
           <>
@@ -24,8 +24,8 @@ const SuccessPage = () => {
               Your message has been successfully send. I&rsquo;ll write you
               soon.
             </p>
-            <div className='contacts__button-home slide-down' ref={buttonRef}>
-              <Link className='button' to={`/`}>
+            <div className="contacts__button-home slide-down" ref={buttonRef}>
+              <Link className="button" to={`/`}>
                 Back Home
               </Link>
             </div>

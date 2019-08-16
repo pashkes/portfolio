@@ -11,17 +11,17 @@ const ModalExp = () => {
 
   return (
     <>
-      <button className='button-experience' onClick={activateModal}>
+      <button className="button-experience" onClick={activateModal}>
         experience
       </button>
       {isModalActive && (
         <AriaModal
-          titleText='My experience'
+          titleText="My experience"
           onExit={deactivateModal}
-          initialFocus='#close-modal'
-          underlayColor='rgba(0,0,0,0)'
+          initialFocus="#close-modal"
+          underlayColor="rgba(0,0,0,0)"
           dialogClass={`modal-exp`}
-          titleId='exp-title'
+          titleId="exp-title"
           dialogStyle={{display: `inline-flex`, width: `100%`}}
           underlayStyle={{
             display: `flex`,
@@ -29,7 +29,7 @@ const ModalExp = () => {
             backgroundColor: `rgba(16, 22, 38, 0.9)`,
             justifyContent: `center`,
           }}>
-          <Modal deactivateModal={deactivateModal} />
+          <Modal onDeactivateModal={deactivateModal} />
         </AriaModal>
       )}
     </>

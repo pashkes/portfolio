@@ -6,7 +6,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    'gatsby-plugin-dark-mode',
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-dark-mode",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -24,13 +25,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Roboto Mono\:400,500`,
-          `Montserrat\:400,600`,
-          `Roboto Slab`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Roboto Mono\:400,500`, `Montserrat\:400,600`, `Roboto Slab`],
+        display: "swap",
+      },
     },
     "gatsby-plugin-slug",
     `gatsby-plugin-sharp`,
@@ -40,9 +37,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /icons/ // See below to configure properly
-        }
-      }
+          include: /icons/, // See below to configure properly
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -54,4 +51,4 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
   ],
-}
+};

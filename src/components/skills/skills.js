@@ -53,31 +53,31 @@ const Skills = () => {
   });
 
   return (
-    <section className='skills'>
-      <h2 className='invisible'>Skills</h2>
-      <div className='skills__col'>
-        <p className='skills__subtitle slide-down' ref={textRef}>
+    <section className="skills">
+      <h2 className="invisible">Skills</h2>
+      <div className="skills__col">
+        <p className="skills__subtitle slide-down" ref={textRef}>
           Skills can be&nbsp;taught, personality is&nbsp;inherent. I&nbsp;prefer
           to&nbsp;keep learning, continue challenging myself, and
           do&nbsp;interesting things that matter.
         </p>
-        <ul className='skills__courses'>
+        <ul className="skills__courses">
           {courses.map(({name, cert}, index) => (
             <li
               key={name}
               className={`slide-right`}
               ref={(course) => (coursesRef.current[index] = course)}>
               <p
-                className='skills__name'
+                className="skills__name"
                 dangerouslySetInnerHTML={{__html: name}}
               />
-              <p className='skills__info'>
+              <p className="skills__info">
                 HTML Academy&nbsp;/{" "}
                 <a
                   href={cert}
-                  className='skills__cert-link link'
+                  className="skills__cert-link link"
                   target={`blank`}
-                  rel='noopener noreferrer'>
+                  rel="noopener noreferrer">
                   certificate
                 </a>
               </p>
@@ -85,8 +85,8 @@ const Skills = () => {
           ))}
         </ul>
       </div>
-      <div className='skills__col'>
-        <ul className='skills__list'>
+      <div className="skills__col">
+        <ul className="skills__list">
           {skills.map((item, index) => (
             <li
               className={`slide-right`}

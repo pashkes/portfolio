@@ -40,8 +40,11 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
     "eslint-config-react-app": "^4.0.1",
+    "eslint-loader": "^2.2.1",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "gatsby-plugin-eslint": "^2.0.5",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   },
@@ -54,9 +57,10 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
+    "eslint": "eslint src/**/*.{js,jsx}",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "npm run eslint"
   },
   "repository": {
     "type": "git",

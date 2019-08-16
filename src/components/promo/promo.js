@@ -18,8 +18,8 @@ const Promo = () => {
   });
 
   return (
-    <section className='promo'>
-      <h1 ref={titleRef} className='promo__title h1 slide-down'>
+    <section className="promo">
+      <h1 ref={titleRef} className="promo__title h1 slide-down">
         I&rsquo;m Front-end developer from Kyiv, Ukraine
       </h1>
       <p className={`promo__subtitle slide-down`} ref={paragraphRef}>

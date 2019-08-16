@@ -5,7 +5,7 @@ import Promo from "../components/promo/promo";
 
 const IndexPage = () => (
   <>
-    <SEO description={`Portfolio`} title='Home' />
+    <SEO description={`Portfolio`} title="Home" />
     <Promo />
   </>
 );

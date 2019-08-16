@@ -34,43 +34,43 @@ const Work = ({
   }, [index]);
 
   return (
-    <section className='work'>
-      <div className='work__info'>
-        <h2 className='work__title h1 slide-down' ref={titleRef}>
+    <section className="work">
+      <div className="work__info">
+        <h2 className="work__title h1 slide-down" ref={titleRef}>
           {title}
         </h2>
         <p
-          className='work__subtitle slide-down'
+          className="work__subtitle slide-down"
           dangerouslySetInnerHTML={{__html: description}}
           ref={subtitleRef}
         />
-        <ul className='work__techs slide-down' ref={skillsRef}>
+        <ul className="work__techs slide-down" ref={skillsRef}>
           {skills.split(` `).map((skill) => (
             <li key={skill}>{skill} </li>
           ))}
         </ul>
         <div
-          className='work__buttons only-for-desktop slide-down'
+          className="work__buttons only-for-desktop slide-down"
           ref={buttonsRef}>
-          <a href={demoLink} className='work__button button'>
+          <a href={demoLink} className="work__button button">
             Discover
           </a>
-          <a href={githubLink} className='work__button button'>
+          <a href={githubLink} className="work__button button">
             view code
           </a>
         </div>
       </div>
-      <div className='work__screen'>
-        <div className='work__preview slide-down-fade' ref={previewPhotoRef}>
+      <div className="work__screen">
+        <div className="work__preview slide-down-fade" ref={previewPhotoRef}>
           <img src={`/img/${preview}`} alt={`Screen ${title}`} />
         </div>
         <div
-          className='work__buttons only-for-mobile slide-down'
+          className="work__buttons only-for-mobile slide-down"
           ref={buttonsMobileRef}>
-          <a href={demoLink} className='work__button button'>
+          <a href={demoLink} className="work__button button">
             Discover
           </a>
-          <a href={githubLink} className='work__button button'>
+          <a href={githubLink} className="work__button button">
             view code
           </a>
         </div>

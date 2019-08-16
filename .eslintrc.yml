@@ -1,0 +1,17 @@
+extends: ['plugin:react/recommended']
+parser: 'babel-eslint'
+parserOptions:
+  parserOptions:
+    sourceType: 'module'
+    allowImportExportEverywhere: true
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+  ecmaVersion: 6
+  sourceType: module
+
+plugins: ['react', 'jsx-a11y']
+
+settings:
+  react:
+    version: '16'

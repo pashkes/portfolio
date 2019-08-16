@@ -6,7 +6,7 @@ import About from "../components/about/about";
 const AboutPage = () => {
   return (
     <>
-      <SEO title='About' />
+      <SEO title="About" />
       <About />
     </>
   );

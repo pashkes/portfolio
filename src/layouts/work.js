@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Pagination from "../components/pagination/pagination";
 import Work from "../components/work/work";
@@ -10,7 +11,7 @@ const WorkLayout = ({pageContext}) => {
   const nextUrl = String(indexPage + 1);
 
   return (
-    <div className='work-layout'>
+    <div className="work-layout">
       <SEO title={group[0].node.frontmatter.title} />
       <Work index={indexPage} {...group[0].node.frontmatter} />
       <Pagination
@@ -23,6 +24,30 @@ const WorkLayout = ({pageContext}) => {
       />
     </div>
   );
+};
+
+WorkLayout.propTypes = {
+  pageContext: PropTypes.shape({
+    group: PropTypes.arrayOf(
+      PropTypes.shape({
+        node: PropTypes.shape({
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            skills: PropTypes.string.isRequired,
+            demoLink: PropTypes.string.isRequired,
+            githubLink: PropTypes.string.isRequired,
+            preview: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      }),
+    ).isRequired,
+    pathPrefix: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    first: PropTypes.bool.isRequired,
+    last: PropTypes.bool.isRequired,
+    pageCount: PropTypes.number.isRequired,
+  }),
 };
 
 export default WorkLayout;

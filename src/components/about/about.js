@@ -21,12 +21,12 @@ const About = () => {
   }, []);
 
   return (
-    <section className='about'>
-      <div className='about__body'>
-        <h2 className='h1 slide-down' ref={titleRef}>
+    <section className="about">
+      <div className="about__body">
+        <h2 className="h1 slide-down" ref={titleRef}>
           Hi, I&rsquo;m Pavel Tarasenko
         </h2>
-        <p className='about__subtitle slide-down' ref={subtitleRef}>
+        <p className="about__subtitle slide-down" ref={subtitleRef}>
           I&rsquo;m really like creating user interfaces which intuitive,
           convenient and beautiful. Of&nbsp;course, I&rsquo;m paying attention
           to&nbsp;performance and accessibility that&nbsp;I consider highly
@@ -35,21 +35,21 @@ const About = () => {
           nowadays.
         </p>
         <div className={`slide-down`} ref={btnDownloadRef}>
-          <a href='/' className='button-download'>
-            <DownloadIcon aria-hidden='true' />
-            <span className='button-download__text'>Download CV</span>
-            <span className='button-download__info'>(pdf 1.2Mb)</span>
+          <a href="/" className="button-download">
+            <DownloadIcon aria-hidden="true" />
+            <span className="button-download__text">Download CV</span>
+            <span className="button-download__info">(pdf 1.2Mb)</span>
           </a>
         </div>
       </div>
-      <div className='about__col'>
+      <div className="about__col">
         <div className={`fade`} ref={myPhotoRef}>
           <MyPhoto />
         </div>
-        <a href='/' className='button-download'>
+        <a href="/" className="button-download">
           <DownloadIcon aria-hidden={true} />
-          <span className='button-download__text'>Download CV</span>
-          <span className='button-download__info'>(pdf 1.2Mb)</span>
+          <span className="button-download__text">Download CV</span>
+          <span className="button-download__info">(pdf 1.2Mb)</span>
         </a>
       </div>
     </section>

@@ -10,7 +10,7 @@ const NavLink = ({title, test, url, className, children, ...attrs}) => {
   if (!test) {
     return (
       <Link
-        className='pagination__arrow'
+        className="pagination__arrow"
         to={`work/${url}`}
         aria-label={title}
         {...attrs}>
@@ -21,21 +21,13 @@ const NavLink = ({title, test, url, className, children, ...attrs}) => {
     return (
       <span
         className={`pagination__arrow ${className} is-disabled`}
-        tabIndex='-1'
+        tabIndex="-1"
         aria-label={title}
         {...attrs}>
         {children}
       </span>
     );
   }
-};
-
-NavLink.propTypes = {
-  title: PropTypes.string.isRequired,
-  test: PropTypes.bool.isRequired,
-  url: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
 };
 
 const Pagination = ({
@@ -48,15 +40,15 @@ const Pagination = ({
 }) => {
   const pagesOfNumber = [...Array(pageOfAmount + 1).keys()].slice(1);
   return (
-    <nav className='pagination' aria-label={`navigation for works`}>
-      <ul className='pagination__list'>
+    <nav className="pagination" aria-label={`navigation for works`}>
+      <ul className="pagination__list">
         <li>
           <NavLink
             test={first}
-            className='pagination__arrow--previous'
+            className="pagination__arrow--previous"
             url={previousUrl}
             title={`Go to Previous Page`}>
-            <IconArrowLeft width='33' height='8' aria-hidden='true' />
+            <IconArrowLeft width="33" height="8" aria-hidden="true" />
           </NavLink>
         </li>
         {pagesOfNumber.map((item) => (
@@ -74,11 +66,11 @@ const Pagination = ({
         ))}
         <li>
           <NavLink
-            className='pagination__arrow--next'
+            className="pagination__arrow--next"
             test={last}
             url={nextUrl}
             title={`Go to Next Page`}>
-            <IconArrowRight width='33' height='8' aria-hidden='true' />
+            <IconArrowRight width="33" height="8" aria-hidden="true" />
           </NavLink>
         </li>
       </ul>
@@ -93,6 +85,14 @@ Pagination.propTypes = {
   last: PropTypes.bool.isRequired,
   previousUrl: PropTypes.string,
   nextUrl: PropTypes.string,
+};
+
+NavLink.propTypes = {
+  title: PropTypes.string.isRequired,
+  test: PropTypes.bool.isRequired,
+  url: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default Pagination;
