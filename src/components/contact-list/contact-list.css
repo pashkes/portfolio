@@ -41,7 +41,9 @@
   display: flex;
   align-items: baseline;
 }
-
+.contacts-list a {
+  text-decoration: none;
+}
 .contacts-list__type {
   font-size: 11px;
   letter-spacing: 0.04em;

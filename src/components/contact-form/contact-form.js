@@ -86,7 +86,6 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
               name="name"
               id="contacts-name"
               aria-required="true"
-              aria-labelledby="name-error-message"
             />
             <label className="form-control__label" htmlFor="contacts-name">
               Name
@@ -94,7 +93,6 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
             <ErrorMessage
               role="alert"
               aria-live="assertive"
-              id="name-error-message"
               className="form-control__error"
               component="span"
               name="name"
@@ -113,7 +111,6 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
               pattern={`[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`}
               inputMode="email"
               aria-required="true"
-              aria-labelledby="email-error-message"
             />
             <label className="form-control__label" htmlFor="contacts-email">
               E-mail
@@ -121,7 +118,6 @@ const ContactForm = ({values, errors, isSubmitting, touched}) => {
             <ErrorMessage
               role="alert"
               aria-live="assertive"
-              id="email-error-message"
               className="form-control__error"
               component="span"
               name="email"
