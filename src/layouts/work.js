@@ -13,7 +13,7 @@ const WorkLayout = ({pageContext}) => {
   return (
     <div className="work-layout">
       <SEO title={group[0].node.frontmatter.title} />
-      <Work index={indexPage} {...group[0].node.frontmatter} />
+      <Work index={indexPage} html={group[0].node.html} {...group[0].node.frontmatter} />
       <Pagination
         previousUrl={previousUrl}
         nextUrl={nextUrl}
@@ -33,12 +33,12 @@ WorkLayout.propTypes = {
         node: PropTypes.shape({
           frontmatter: PropTypes.shape({
             title: PropTypes.string.isRequired,
-            description: PropTypes.string.isRequired,
             skills: PropTypes.string.isRequired,
             demoLink: PropTypes.string.isRequired,
             githubLink: PropTypes.string.isRequired,
             preview: PropTypes.string.isRequired,
           }).isRequired,
+          html: PropTypes.string.isRequired,
         }).isRequired,
       }),
     ).isRequired,

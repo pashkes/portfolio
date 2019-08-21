@@ -32,13 +32,13 @@ const Modal = ({onDeactivateModal}) => {
               Ashmanov &amp;&nbsp;Partners, Moscow (remote)
             </p>
             <p className="modal-exp__position">
-              Front-end developer&nbsp;/ 1&nbsp;year 3&nbsp;months
+              Front-end developer&nbsp;/ 1&nbsp;year 4&nbsp;months
             </p>
           </li>
           <li className="modal-exp__item">
             <p className="modal-exp__company">MPS Development, Kiev</p>
             <p className="modal-exp__position">
-              Front-end developer&nbsp;/ 1&nbsp;year 3&nbsp;months
+              Front-end developer&nbsp;/ 1&nbsp;year
             </p>
           </li>
           <li className="modal-exp__item">

@@ -4,15 +4,20 @@ import {TimelineLite} from "gsap";
 import "./skills.css";
 
 const skills = [
-  `TypeScript`,
   `React`,
   `Redux`,
-  `CSS`,
-  `JS`,
+  `TypeScript`,
+  `JS(ES5+)`,
+  'Gatsby',
   `HTML`,
-  `Enzyme`,
+  `CSS`,
+  'Sass',
+  'pug',
   `Jest`,
-  `pug`,
+  `Enzyme`,
+  'Unit tests | E2E | Snapshot',
+  'Accessibility',
+  'Performance optimization',
 ];
 
 const courses = [

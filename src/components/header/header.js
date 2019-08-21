@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="header__top-panel">
         <h1 className="header__logo">
-          <Link to={`/`}>PavelTarasenko</Link>
+          <Link to={`/`}>PavloTarasenko</Link>
         </h1>
         <DarkModeToggle />
       </div>

@@ -1,8 +1,9 @@
 ---
+number: 2
 title: "Six-cities"
-description: "Service for travelers which haven&rsquo;t wish overpay for rental housing. You can choose one of&nbsp;six popular cities for travel and get actual offers of&nbsp;the list on&nbsp;rent. Detail information about housing, showing object on&nbsp;the map, and laconic interface service help fast choose an&nbsp;optimal offer."
-githubLink: "/demo-github"
-demoLink: "/demo-project-1"
-skills: "React.js, Redux, Jest, Enzyme"
-preview: "six-cities.png"
+githubLink: "https://github.com/pashkes/six-cities"
+demoLink: "https://six-cities.netlify.com/"
+skills: "React.js, Redux, Redux-Thunk, Jest, Enzyme, Axios, Reselect, Leaflet"
+preview: "six-cities"
 ---
+Service for travellers which don&rsquo;t wish to&nbsp;overpay for accommodation. You can choose one of&nbsp;six popular cities to&nbsp;travel and get actual offers. You get detailed information about accommodation , see objects on&nbsp;the map, and simple and user-friendly interface service that helps to&nbsp;make the best choice.

@@ -13,19 +13,20 @@ exports.createPages = ({graphql, actions: {createPage}}) => {
     graphql(`
       {
         works: allMarkdownRemark(
-          sort: {fields: [frontmatter___title], order: DESC}
+          sort: {fields: [frontmatter___number], order: ASC}
         ) {
           edges {
             node {
               id
               frontmatter {
+                number
                 title
                 skills
                 preview
                 githubLink
-                description
                 demoLink
               }
+              html
               fields {
                 slug
               }

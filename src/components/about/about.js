@@ -27,12 +27,7 @@ const About = () => {
           Hi, I&rsquo;m Pavel Tarasenko
         </h2>
         <p className="about__subtitle slide-down" ref={subtitleRef}>
-          I&rsquo;m really like creating user interfaces which intuitive,
-          convenient and beautiful. Of&nbsp;course, I&rsquo;m paying attention
-          to&nbsp;performance and accessibility that&nbsp;I consider highly
-          important
-          <ModalExp />
-          nowadays.
+          I&rsquo;m Pavel from Kyiv, Ukraine. I&nbsp;have more than 2&nbsp;years&rsquo; <ModalExp /> in&nbsp;HTML/CSS/Javascript. I&nbsp;love creating user interfaces which are intuitive, convenient and beautiful. Of&nbsp;course, I&rsquo;m paying attention to&nbsp;performance and accessibility that&nbsp;I consider to&nbsp;be&nbsp;highly important.
         </p>
         <div className={`slide-down`} ref={btnDownloadRef}>
           <a href="/" className="button-download">
@@ -44,7 +39,7 @@ const About = () => {
       </div>
       <div className="about__col">
         <div className={`fade`} ref={myPhotoRef}>
-          <MyPhoto />
+          {/*<MyPhoto />*/}
         </div>
         <a href="/" className="button-download">
           <DownloadIcon aria-hidden={true} />

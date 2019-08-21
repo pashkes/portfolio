@@ -7,7 +7,7 @@ import "./work.css";
 const Work = ({
   index,
   title,
-  description,
+  html,
   skills,
   demoLink,
   githubLink,
@@ -32,16 +32,16 @@ const Work = ({
       .to(previewPhotoRef.current, 2, {opacity: 1, x: 0, scale: 1})
       .play();
   }, [index]);
-
+  console.log(githubLink === `/`);
   return (
     <section className="work">
       <div className="work__info">
         <h2 className="work__title h1 slide-down" ref={titleRef}>
           {title}
         </h2>
-        <p
+        <div
           className="work__subtitle slide-down"
-          dangerouslySetInnerHTML={{__html: description}}
+          dangerouslySetInnerHTML={{__html: html}}
           ref={subtitleRef}
         />
         <ul className="work__techs slide-down" ref={skillsRef}>
@@ -52,27 +52,20 @@ const Work = ({
         <div
           className="work__buttons only-for-desktop slide-down"
           ref={buttonsRef}>
-          <a href={demoLink} className="work__button button">
-            Discover
-          </a>
-          <a href={githubLink} className="work__button button">
-            view code
-          </a>
+          <a href={demoLink} className="work__button button">Discover</a>
+          {githubLink !== `/` ? <a href={githubLink} className="work__button button">view code</a> : null}
         </div>
       </div>
       <div className="work__screen">
         <div className="work__preview slide-down-fade" ref={previewPhotoRef}>
-          <img src={`/img/${preview}`} alt={`Screen ${title}`} />
+          <picture>
+            <source srcSet={`/img/${preview}.webp, /img/${preview}@2x.webp 2x`} type="image/webp"/>
+            <img src={`/img/${preview}.png`} srcSet={`/img/${preview}@2x.png 2x`} alt={`Screen ${title}`} />
+          </picture>
         </div>
-        <div
-          className="work__buttons only-for-mobile slide-down"
-          ref={buttonsMobileRef}>
-          <a href={demoLink} className="work__button button">
-            Discover
-          </a>
-          <a href={githubLink} className="work__button button">
-            view code
-          </a>
+        <div className="work__buttons only-for-mobile slide-down" ref={buttonsMobileRef}>
+          <a href={demoLink} className="work__button button">Discover</a>
+          {githubLink !== `/` ? <a href={githubLink} className="work__button button">view code</a> : null}
         </div>
       </div>
     </section>
@@ -82,7 +75,7 @@ const Work = ({
 Work.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired,
   skills: PropTypes.string.isRequired,
   demoLink: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired,

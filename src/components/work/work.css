@@ -17,8 +17,15 @@
   margin-bottom: 8px;
   font-size: 12px;
   line-height: 1.5;
-}
 
+}
+.work__subtitle p {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+.work__subtitle p + p {
+  margin-top: 8px;
+}
 .work__techs {
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +72,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .work {
     grid-template-columns: 0.73fr 1fr;
     align-items: center;

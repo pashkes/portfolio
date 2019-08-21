@@ -1,8 +1,9 @@
 ---
+number: 3
 title: "Big-trip"
-description: "Project Brief: Service for detailed planning your travel, account cost travel and get information about sights. The minimalist interface won't give occasion to be distracted."
-githubLink: "/demo-github"
-demoLink: "/demo-project-1"
-skills: "JS"
-preview: "big-trip.png"
+githubLink: "https://github.com/pashkes/big-trip"
+demoLink: "https://pashkes.github.io/big-trip/"
+skills: "JS, moment.js, flatpickr"
+preview: "big-trip"
 ---
+Service that helps to&nbsp;plan your trip in&nbsp;detail, helps to&nbsp;calculate the cost of&nbsp;the trip and get information about the sights. The minimalist interface won&rsquo;t give occasion to&nbsp;be&nbsp;distracted. It&rsquo;s only a&nbsp;desktop version.

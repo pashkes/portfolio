@@ -78,7 +78,7 @@
     font-size: 24px;
   }
   .skills__list > * + * {
-    margin-top: 24px;
+    margin-top: 20px;
   }
   .skills__cert-link::before {
     bottom: 0.27em;

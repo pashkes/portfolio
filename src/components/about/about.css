@@ -2,7 +2,9 @@
   display: grid;
   padding-top: 20px;
 }
-
+.about__subtitle {
+  max-width: 60ch;
+}
 .about__photo {
   margin-bottom: 24px;
   max-width: 326px;
