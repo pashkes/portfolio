@@ -30,7 +30,7 @@ const About = () => {
           I&rsquo;m Pavel from Kyiv, Ukraine. I&nbsp;have more than 2&nbsp;years&rsquo; <ModalExp /> in&nbsp;HTML/CSS/Javascript. I&nbsp;love creating user interfaces which are intuitive, convenient and beautiful. Of&nbsp;course, I&rsquo;m paying attention to&nbsp;performance and accessibility that&nbsp;I consider to&nbsp;be&nbsp;highly important.
         </p>
         <div className={`slide-down`} ref={btnDownloadRef}>
-          <a href="pavlo-tarasenko-cv.pdf" download className="button-download">
+          <a href="/pavlo-tarasenko-cv.pdf" download className="button-download">
             <DownloadIcon aria-hidden={true} />
             <span className="button-download__text">Download CV</span>
             <span className="button-download__info">(pdf 66kb)</span>
