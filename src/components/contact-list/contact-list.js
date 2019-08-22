@@ -6,8 +6,8 @@ const ContactList = () => (
   <ul className="contacts-list">
     <li>
       <span className="contacts-list__type">E-mail</span>
-      <a href="mailto:p.tarasenko.dev@gmail.com" className="contacts-list__link link">
-        p.tarasenko.dev@gmail.com
+      <a href="mailto:pavlo.tarasenko.dev@gmail.com" className="contacts-list__link link">
+        pavlo.tarasenko.dev@gmail.com
       </a>
     </li>
     <li>
