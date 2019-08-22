@@ -32,7 +32,6 @@ const Work = ({
       .to(previewPhotoRef.current, 2, {opacity: 1, x: 0, scale: 1})
       .play();
   }, [index]);
-  console.log(githubLink === `/`);
   return (
     <section className="work">
       <div className="work__info">
