@@ -16,7 +16,7 @@ const SuccessPage = () => {
   });
   return (
     <>
-      <SEO description={`Portfolio`} title="The form has been success sent" />
+      <SEO title="The form has been success sent" />
       <Contacts
         child={
           <>

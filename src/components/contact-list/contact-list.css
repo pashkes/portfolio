@@ -17,8 +17,7 @@
   transform-origin: 0 0;
 }
 
-.link:hover::before,
-.link:focus::before {
+.link:hover::before {
   transform: scale(1);
 }
 

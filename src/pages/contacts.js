@@ -6,7 +6,7 @@ import ContactForm from "../components/contact-form/contact-form";
 
 const ContactsPage = () => (
   <>
-    <SEO description={`Portfolio`} title="Contact" />
+    <SEO title="Contact" />
     <Contacts child={<ContactForm />} />
   </>
 );

@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.button-experience.focus-visible,
+.js-focus-visible .button-experience:focus:not(.focus-visible)  {
+  outline: 1px dashed var(--secondary-color);
+}
 .modal-exp {
   position: relative;
   display: flex !important;

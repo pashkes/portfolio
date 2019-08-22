@@ -18,6 +18,11 @@
     display: flex;
     align-items: center;
     height: 100%;
+
+}
+
+.pagination__list li:first-child {
+
 }
 
 .pagination__item a {
@@ -97,6 +102,11 @@
 .pagination__arrow.is-disabled svg {
     fill-opacity: 0.3;
 }
+
+.pagination__arrow:not(.is-disabled):hover svg {
+    fill: var(--secondary-color)
+}
+
 @media (min-width: 425px) {
     .pagination__item a {
         width: 44px;
@@ -104,6 +114,7 @@
     }
 
 }
+
 @media (min-width: 1024px) {
     .pagination {
         margin-bottom: -42px;

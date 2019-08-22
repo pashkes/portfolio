@@ -33,6 +33,10 @@
   fill: #575b67;
   transition: var(--base-transition);
 }
+.light .toggle input:focus ~ .light,
+.dark .toggle input:checked:focus ~ .dark {
+  outline: 1px dashed var(--secondary-color);
+}
 
 @media (prefers-color-scheme: dark) {
   .light .toggle-icon.light svg {

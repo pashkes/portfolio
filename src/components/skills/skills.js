@@ -8,16 +8,16 @@ const skills = [
   `Redux`,
   `TypeScript`,
   `JS(ES5+)`,
-  'Gatsby',
+  "Gatsby",
   `HTML`,
   `CSS`,
-  'Sass',
-  'pug',
+  "Sass",
+  "pug",
   `Jest`,
   `Enzyme`,
-  'Unit tests | E2E | Snapshot',
-  'Accessibility',
-  'Performance optimization',
+  "Unit tests | E2E | Snapshot",
+  "Accessibility",
+  "Performance optimization",
 ];
 
 const courses = [
@@ -40,6 +40,14 @@ const courses = [
   {
     name: `HTML and CSS, Level&nbsp;1`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/18/164879.pdf`,
+  },
+  {
+    name: `General English – Pre-intermediate`,
+    cert: `https://drive.google.com/file/d/1VChCHLdwiZceeUTOCq2ZoCLCGwzIV7Yc/view`,
+  },
+  {
+    name: `General English – Elementary `,
+    cert: `https://drive.google.com/file/d/0B2WaTCbThw1GVjluTnMzZmxmV0RKWUozZHFic0xJUDZhYWVJ/view`,
   },
 ];
 

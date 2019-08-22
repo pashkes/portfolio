@@ -142,7 +142,13 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
-
+.js-focus-visible :focus:not(.focus-visible) {
+outline: none;
+}
+a.focus-visible {
+  text-decoration: none;
+  outline: 1px dashed #4aa055;
+}
 .h1,
 h1 {
   margin-top: 0;
@@ -200,16 +206,32 @@ p {
   text-decoration: none;
   cursor: pointer;
 }
+.button.focus-visible {
+  outline: 1px dashed var(--secondary-color);
+  outline-offset: 8px;
+  border-color: white;
+  color: white;
+}
 
 .light .button {
   border-color: var(--color-text);
 }
-
 .light .button:hover {
   border-color: var(--secondary-color);
 }
+@media (prefers-color-scheme: light) {
+  .button {
+    border-color: var(--color-text);
+  }
+  .button:hover {
+    border-color: var(--secondary-color);
+  }
+  .button:focus {
+    color: #101626;
+  }
+}
 
-.button[disabled],
+  .button[disabled],
 .button--disabled {
   cursor: not-allowed;
   border-color: var(--grey-color);
