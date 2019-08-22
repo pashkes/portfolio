@@ -114,7 +114,7 @@
   .layout__footer {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3.35fr;
     grid-column-gap: 32px;
     align-items: center;
   }
