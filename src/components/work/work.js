@@ -51,8 +51,8 @@ const Work = ({
         <div
           className="work__buttons only-for-desktop slide-down"
           ref={buttonsRef}>
-          <a href={demoLink} className="work__button button">Discover</a>
-          {githubLink !== `/` ? <a href={githubLink} className="work__button button">view code</a> : null}
+          <a href={demoLink} target="_blank" rel="noopener noreferrer" className="work__button button">Discover</a>
+          {githubLink !== `/` ? <a href={githubLink} target="_blank" rel="noopener noreferrer" className="work__button button">view code</a> : null}
         </div>
       </div>
       <div className="work__screen">
@@ -63,8 +63,8 @@ const Work = ({
           </picture>
         </div>
         <div className="work__buttons only-for-mobile slide-down" ref={buttonsMobileRef}>
-          <a href={demoLink} className="work__button button">Discover</a>
-          {githubLink !== `/` ? <a href={githubLink} className="work__button button">view code</a> : null}
+          <a href={demoLink} target="_blank" rel="noopener noreferrer" className="work__button button">Discover</a>
+          {githubLink !== `/` ? <a href={githubLink} target="_blank" rel="noopener noreferrer"  className="work__button button">view code</a> : null}
         </div>
       </div>
     </section>
