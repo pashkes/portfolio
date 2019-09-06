@@ -24,30 +24,37 @@ const courses = [
   {
     name: `Javascript, Level&nbsp;3 (React.js)`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/133/164879.pdf`,
+    company: `HTML Academy`,
   },
   {
     name: `Javascript, Level&nbsp;2`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/131/164879.pdf`,
+    company: `HTML Academy`,
   },
   {
     name: `Javascript, Level&nbsp;1`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/55/164879.pdf`,
+    company: `HTML Academy`,
   },
   {
     name: `HTML and CSS, Level&nbsp;2`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/24/164879.pdf`,
+    company: `HTML Academy`,
   },
   {
     name: `HTML and CSS, Level&nbsp;1`,
     cert: `https://assets.htmlacademy.ru/certificates/intensive/18/164879.pdf`,
+    company: `HTML Academy`,
   },
   {
     name: `General English – Pre-intermediate`,
     cert: `https://drive.google.com/file/d/1VChCHLdwiZceeUTOCq2ZoCLCGwzIV7Yc/view`,
+    company: `Skyeng`,
   },
   {
     name: `General English – Elementary `,
     cert: `https://drive.google.com/file/d/0B2WaTCbThw1GVjluTnMzZmxmV0RKWUozZHFic0xJUDZhYWVJ/view`,
+    company: `Skyeng`,
   },
 ];
 
@@ -75,7 +82,7 @@ const Skills = () => {
           do&nbsp;interesting things that matter.
         </p>
         <ul className="skills__courses">
-          {courses.map(({name, cert}, index) => (
+          {courses.map(({name, cert, company}, index) => (
             <li
               key={name}
               className={`slide-right`}
@@ -85,7 +92,7 @@ const Skills = () => {
                 dangerouslySetInnerHTML={{__html: name}}
               />
               <p className="skills__info">
-                HTML Academy&nbsp;/{" "}
+               {company}&nbsp;/{" "}
                 <a
                   href={cert}
                   className="skills__cert-link link"
