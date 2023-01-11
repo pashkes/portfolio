@@ -29,7 +29,7 @@
     "gatsby-plugin-sw": "^1.0.1",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-source-filesystem": "^2.1.7",
-    "gatsby-transformer-remark": "^2.6.10",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.5",
     "gsap": "^2.1.3",
     "normalize.css": "^8.0.1",
